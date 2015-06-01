@@ -1016,60 +1016,45 @@ $\;$ \\
    \includegraphics[scale=1]{Nav_LastLoggedInMembers.pdf}
  \captionof{figure}[10 last logged in members WSDM model]{The 10 last logged in members navigational model.}
 \end{minipage}
-$\;$ \\ 
 
-\subsection{Change profile information}
+\clearpage
 
+\subsection{Change, add and delete profile information}
+
+The first step in changing / editing the personal profile of any registered user is accessing the profile. Then the user is able to change the nickname, age, location, gender and picture. All the information is passed to the system. \\
+Deleting profile information - i.e., leaving blank some input form fields uses the same navigational model and is therefore not drawn again. \\
+Adding profile information - i.e., filling in input form fields uses also the same navigational model and is again thus not drawn again.
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
-   \includegraphics[scale=1]{Nav_ChangeProfileInformation.pdf}
- \captionof{figure}[Change profile information WSDM model]{Change profile information navigational model.}
+   \includegraphics[scale=0.85]{Nav_ChangeProfileInformation.pdf}
+ \captionof{figure}[Change, (add en delete) profile information WSDM model]{Change (,add en delete) profile information navigational model.}
 \end{minipage}
-$\;$ \\ 
-
-\subsection{Add profile information}
-
-$\;$ \\
-\noindent\begin{minipage}{\textwidth}
-    \centering
-   \includegraphics[scale=1]{nav_AddProfileInformation.pdf}
- \captionof{figure}[Add profile information WSDM model]{Add profile information navigational model.}
-\end{minipage}
-$\;$ \\ 
-
-\subsection{Delete profile information}
-
-$\;$ \\
-\noindent\begin{minipage}{\textwidth}
-    \centering
-   \includegraphics[scale=1]{nav_DeleteProfileInformation.pdf}
- \captionof{figure}[Delete profile information]{Delete profile information.}
-\end{minipage}
-$\;$ \\ 
 
 \subsection{Search for users}
 
+Registered users are able to search for users. To do so, the search criteria are provided to the system. These are: nickname, age, location, gender and range. Subsequently, the system displays the results. Note that none of the search criteria are required. If no criteria are supplied to the system, all users are returned.
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{nav_SearchUsers.pdf}
- \captionof{figure}[Search users]{Search for users.}
+ \captionof{figure}[Search users WSDM model]{Search for users navigational model.}
 \end{minipage}
-$\;$ \\ 
 
 \subsection{Browse user profiles}
 
+Registered users are able to browse each other's user profiles. The figure below depicts this navigational model. The figure is quite straightforward and does not require more information to be specified.
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{nav_BrowseUserProfile.pdf}
- \captionof{figure}[Browse user profiles]{Browse user profiles.}
+ \captionof{figure}[Browse user profiles WSDM model]{Browse user profiles navigational model.}
 \end{minipage}
-$\;$ \\ 
-
 
 \subsection{Put message on user wall}
+
+Any registered user - whether it is a ``single'' or ``administrator'', can put a message on a ``single'' ' wall. To do so, the user navigates to the user's wall, chooses to place a message on its wall and enters the message text. The system makes the text visible to the rest. \\
+The profileID is also supplied to identify the user's wall. The time is provided to the system as well to be able to know the date the message has been posted.
 
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
@@ -1077,9 +1062,10 @@ $\;$ \\
    \includegraphics[scale=1]{nav_PutMessageOnUserWall.pdf}
  \captionof{figure}[Put message on user wall]{Put message on user wall.}
 \end{minipage}
-$\;$ \\ 
 
 \subsection{Answer to a message on personal wall}
+
+Once the message has been posted on the user's wall, the ``single'' can reply to the posted message. To do so, the user navigates to its personal wall, selects the message, enters a text and posts the answer. The system save the new reply. During the entire process, the unique ID of the message is passed through the system. 
 
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
@@ -1087,10 +1073,10 @@ $\;$ \\
    \includegraphics[scale=1]{nav_AnswerMessagePersonalWall.pdf}
  \captionof{figure}[Answer message on user wall]{Answer message on personal wall.}
 \end{minipage}
-$\;$ \\ 
 
 \subsection{Delete message on personal wall}
 
+Deletion of a message follows roughly the same procedure as answering to a message on the personal wall. Instead of answering to a message, the system now asks for confirmation. The ``single'' confirms or rejects the deletion. When rejected, he is returned to the personal wall again. In case of confirmation, the message is deleted.
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
