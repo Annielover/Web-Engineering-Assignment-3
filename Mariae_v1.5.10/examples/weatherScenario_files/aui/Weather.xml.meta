@@ -1,3 +1,0 @@
-P1_GetCityWeatherByZIP!http://ws.cdyne.com/WeatherWS/#Weather#WeatherSoap#GetCityWeatherByZIP
-P1_GetCityForecastByZIP!http://ws.cdyne.com/WeatherWS/#Weather#WeatherSoap#GetCityForecastByZIP
-P1_GetWeatherInformation!http://ws.cdyne.com/WeatherWS/#Weather#WeatherSoap#GetWeatherInformation

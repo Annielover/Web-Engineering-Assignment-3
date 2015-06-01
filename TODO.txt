@@ -1,2 +1,0 @@
-TODO: CTT to register
-	Visitor -> registered user -> split into administrator and singles
