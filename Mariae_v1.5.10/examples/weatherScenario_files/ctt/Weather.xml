@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="Weather">
+    <Task Identifier="Weather" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Weather</Name>
+        <Type></Type>
+        <SubTask>
+            <Task Identifier="GetCityWeatherByZIP" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>GetCityWeatherByZIP</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Weather"/>
+                <SiblingRight name="GetCityForecastByZIP"/>
+                <SubTask>
+                    <Task Identifier="Enter GetCityWeatherByZIP_ZIP" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter GetCityWeatherByZIP_parameters</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="GetCityWeatherByZIP"/>
+                        <SiblingRight name="Invoke GetCityWeatherByZIP"/>
+                    </Task>
+                    <Task Identifier="Invoke GetCityWeatherByZIP" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke GetCityWeatherByZIP</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="GetCityWeatherByZIP"/>
+                        <SiblingLeft name="Enter GetCityWeatherByZIP_ZIP"/>
+                        <SiblingRight name="Execute GetCityWeatherByZIP"/>
+                    </Task>
+                    <Task Identifier="Execute GetCityWeatherByZIP" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute GetCityWeatherByZIP</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="GetCityWeatherByZIP"/>
+                        <SiblingLeft name="Invoke GetCityWeatherByZIP"/>
+                        <SiblingRight name="Output  GetCityWeatherByZIP"/>
+                    </Task>
+                    <Task Identifier="Output  GetCityWeatherByZIP" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  GetCityWeatherByZIP</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="GetCityWeatherByZIP"/>
+                        <SiblingLeft name="Execute GetCityWeatherByZIP"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="GetCityForecastByZIP" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>GetCityForecastByZIP</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Weather"/>
+                <SiblingLeft name="GetCityWeatherByZIP"/>
+                <SiblingRight name="GetWeatherInformation"/>
+                <SubTask>
+                    <Task Identifier="Enter GetCityForecastByZIP_ZIP" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter GetCityForecastByZIP_parameters</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="GetCityForecastByZIP"/>
+                        <SiblingRight name="Invoke GetCityForecastByZIP"/>
+                    </Task>
+                    <Task Identifier="Invoke GetCityForecastByZIP" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke GetCityForecastByZIP</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="GetCityForecastByZIP"/>
+                        <SiblingLeft name="Enter GetCityForecastByZIP_ZIP"/>
+                        <SiblingRight name="Execute GetCityForecastByZIP"/>
+                    </Task>
+                    <Task Identifier="Execute GetCityForecastByZIP" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute GetCityForecastByZIP</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="GetCityForecastByZIP"/>
+                        <SiblingLeft name="Invoke GetCityForecastByZIP"/>
+                        <SiblingRight name="Output  GetCityForecastByZIP"/>
+                    </Task>
+                    <Task Identifier="Output  GetCityForecastByZIP" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  GetCityForecastByZIP</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="GetCityForecastByZIP"/>
+                        <SiblingLeft name="Execute GetCityForecastByZIP"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="GetWeatherInformation" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>GetWeatherInformation</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Weather"/>
+                <SiblingLeft name="GetCityForecastByZIP"/>
+                <SubTask>
+                    <Task Identifier="Enter GetWeatherInformation_complex content" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter GetWeatherInformation_parameters</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="GetWeatherInformation"/>
+                        <SiblingRight name="Invoke GetWeatherInformation"/>
+                    </Task>
+                    <Task Identifier="Invoke GetWeatherInformation" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke GetWeatherInformation</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="GetWeatherInformation"/>
+                        <SiblingLeft name="Enter GetWeatherInformation_complex content"/>
+                        <SiblingRight name="Execute GetWeatherInformation"/>
+                    </Task>
+                    <Task Identifier="Execute GetWeatherInformation" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute GetWeatherInformation</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="GetWeatherInformation"/>
+                        <SiblingLeft name="Invoke GetWeatherInformation"/>
+                        <SiblingRight name="Output  GetWeatherInformation"/>
+                    </Task>
+                    <Task Identifier="Output  GetWeatherInformation" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  GetWeatherInformation</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="GetWeatherInformation"/>
+                        <SiblingLeft name="Execute GetWeatherInformation"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

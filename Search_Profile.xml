@@ -1,0 +1,53 @@
+<?xmp version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="Search for users">
+    <Task Identifier="Search for users" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="Specify search term" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="Search for users"/>
+                <SiblingRight name="Display results"/>
+                <SubTask>
+                    <Task Identifier="Enter username" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="Choice"/>
+                        <Parent name="Specify search term"/>
+                        <SiblingRight name="Enter age"/>
+                    </Task>
+                    <Task Identifier="Enter age" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="Choice"/>
+                        <Parent name="Specify search term"/>
+                        <SiblingLeft name="Enter username"/>
+                        <SiblingRight name="Enter gender"/>
+                    </Task>
+                    <Task Identifier="Enter gender" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="Choice"/>
+                        <Parent name="Specify search term"/>
+                        <SiblingLeft name="Enter age"/>
+                        <SiblingRight name="Enter range"/>
+                    </Task>
+                    <Task Identifier="Enter range" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="Choice"/>
+                        <Parent name="Specify search term"/>
+                        <SiblingLeft name="Enter gender"/>
+                        <SiblingRight name="Enter location"/>
+                    </Task>
+                    <Task Identifier="Enter location" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Parent name="Specify search term"/>
+                        <SiblingLeft name="Enter range"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Display results" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <Parent name="Search for users"/>
+                <SiblingLeft name="Specify search term"/>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

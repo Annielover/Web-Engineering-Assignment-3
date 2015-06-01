@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:AnnotationModel xmlns:ns2="http://servface.org/servfaceannotationmodel-1.2" xmlns:ns3="http://servface.org/servfaceannotationmodel-1.2/annotations" xmlns:ns4="http://servface.org/servfaceannotationmodel-1.2/annotations/extensions" baseDescriptionFileURI="http://saturno.isti.cnr.it:8080/HomeScenarioServiceV2/HomeScenarioWSversion2?wsdl" baseNamespace="http://ws.hiis.isti.cnr.it/">
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.login" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Login" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Login" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.getDeviceList" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get device list" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get device list" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="thermostat.id"/>
+    <referenceObjects hierarchicalName="dimmerlightbulb.id"/>
+    <referenceObjects hierarchicalName="lightbulb.id"/>
+    <referenceObjects hierarchicalName="alarm.id"/>
+    <referenceObjects hierarchicalName="sensor.id"/>
+    <referenceObjects hierarchicalName="washingmachine.id"/>
+    <referenceObjects hierarchicalName="oven.id"/>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_isOn" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get is on" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Thermostat is on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="True if the thermostat is on, false otherwise" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_getTemperature" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get temperature" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Thermostat get temperature" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Retrieves the current thermostat temperature" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_turnOn" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Thermostat turn on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Set on" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Turns the thermostan on or off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_getRange" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Thermostat get range" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get temperature range" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Retrieves the current temperature range" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_setTemperature" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Thermostat set temperature" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Set temperature" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Set the current thermostat temperature" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_isOn" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Dimmer light is on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get is on" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="True if the dimmer light bulb is on, false otherwise" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_turnOn" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Dimmer light turn on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Turn on/off" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Turns the dimmer light bulb on or off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_setDimmer" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Dimmer light set dimmer" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Set dimmer value" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Sets the current value for the dimmer" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_getDimmer" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Dimmer light get dimmer value" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get dimmer value" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Retrieves the current dimmer value" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_getRange" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Dimmer light get range" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get dimmer range" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Retrieves the dimmer range" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Lightbulb_isOn" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Light bulb is on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get is on" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Turns the light on or off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Lightbulb_turnOn" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Light bulb turn on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Turn on/off" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Turns the light on or off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Alarm_getState" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Alarm get state" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get state" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Retrieves the curren alarm state" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Alarm_setState" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Alarm set state" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Set alarm state" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Sets the current alarm state" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Sensor_getStatus" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Sensor get status" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get sensor status" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Retrieves the curren sensor status" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_turnOn" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Washing machine turn on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Turn on/off" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Turns the washing machine on or off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_isOn" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Washing machine is on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get is on" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="True if the waching machine is on or off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_getCycle" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Washing machine get cycle" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get washing cycle" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Retrieves the current washing machine cycle" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_setCycle" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Washing machine set cycle" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Set washing cycle" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Sets the current washing machine cycle" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_turnOn" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Oven turn on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Turn on/off" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Sets the oven on or off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_isOn" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Oven is on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get is on" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="True if the oven is on, false otherwise" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_getTemperatureRange" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Oven get temperature range" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get temperature range" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Gets the oven temperature range" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_getTemperature" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Oven get temperature" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get temperature" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Retrieves the current oven temperature" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_setTemperature" refType="Operation">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:OperationAuth" authenticationOperation="//@referenceObjects.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Oven set temperature" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Set temperature" type="ButtonLabel" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Sets current oven temperature" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_isOn.input.parameters.thermostat" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.2"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_getTemperature.input.parameters.thermostat" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.2"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_turnOn.input.parameters.thermostat" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.2"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_getRange.input.parameters.thermostat" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.2"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_setTemperature.input.parameters.thermostat" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.2"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_isOn.input.parameters.dimmerlight" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.3"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_turnOn.input.parameters.lightbulb" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.3"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_setDimmer.input.parameters.lightbulb" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.3"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_getDimmer.input.parameters.lightbulb" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.3"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_getRange.input.parameters.lightbulb" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.3"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Lightbulb_isOn.input.parameters.lightbulb" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.4"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Lightbulb_turnOn.input.parameters.lightbulb" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.4"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Alarm_getState.input.parameters.alarm" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.5"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Alarm_setState.input.parameters.alarm" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.5"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Sensor_getStatus.input.parameters.sensor" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.6"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_turnOn.input.parameters.washingmachine" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.7"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_isOn.input.parameters.washingmachine" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.7"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_getCycle.input.parameters.washingmachine" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.7"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_setCycle.input.parameters.washingmachine" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.7"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_turnOn.input.parameters.oven" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.8"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_isOn.input.parameters.oven" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.8"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_getTemperatureRange.input.parameters.oven" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.8"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_getTemperature.input.parameters.oven" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.8"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_setTemperature.input.parameters.oven" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.1" pickFromList="true"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:SemanticDataTypeRelation" dataType="//@referenceObjects.8"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_turnOn.input.parameters.on" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="ON" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="True for turning on the thermostat, false for turn it off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_setTemperature.input.parameters.temperature" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="New temperature" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="The new temperature to set for the thermostat" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:MandatoryField">
+            <errorMessage xsi:type="ns3:TextFeedback" text="A new value for the temperature is needed" type="Error" languages="//@languages.0" platforms="//@platforms.0"/>
+        </annotations>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:Validation" languages="//@languages.0">
+            <message xsi:type="ns3:TextFeedback" text="Invalid temperature value" type="Error" languages="//@languages.0" platforms="//@platforms.2"/>
+            <expression expression="[0-9]+" expressionType="REGEX"/>
+        </annotations>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_turnOn.input.parameters.on" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="ON" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="True for turning on the light, false for turning it off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_setDimmer.input.parameters.dimmerValue" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="New dimmer value" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="The new dimmer value to set for the dimmer" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:MandatoryField">
+            <errorMessage xsi:type="ns3:TextFeedback" text="A new value for the dimmer is needed" type="Error" languages="//@languages.0" platforms="//@platforms.0"/>
+        </annotations>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Lightbulb_turnOn.input.parameters.on" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="ON" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="True for turning on the light, false for turning it off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Alarm_setState.input.parameters.state" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="New state" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="The new alarm state to set" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:Enum" platforms="//@platforms.0" languages="//@languages.0">
+            <elements>Total</elements>
+            <elements>Partial</elements>
+            <elements>Critical</elements>
+            <elements>None</elements>
+        </annotations>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_turnOn.input.parameters.on" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="ON" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="True for turning on the washing machine, false for turning it off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_setCycle.input.parameters.cycle" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Wash program" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="The washing machine program" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:Enum" platforms="//@platforms.0" languages="//@languages.0">
+            <elements>Quick-wash</elements>
+            <elements>Reduced-ironing</elements>
+            <elements>Delicates</elements>
+            <elements>Handwash</elements>
+            <elements>Freshen-up</elements>
+            <elements>Economy</elements>
+            <elements>Superquick</elements>
+            <elements>Sports</elements>
+        </annotations>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_turnOn.input.parameters.on" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="ON" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="True for turning on the oven, false for turning it off" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_setTemperature.input.parameters.temperature" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="New temperature" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="The new temperature to set for the oven" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:MandatoryField">
+            <errorMessage xsi:type="ns3:TextFeedback" text="A new value for the temperature is needed" type="Error" languages="//@languages.0" platforms="//@platforms.0"/>
+        </annotations>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:Validation" languages="//@languages.0">
+            <message xsi:type="ns3:TextFeedback" text="Invalid temperature value" type="Error" languages="//@languages.0" platforms="//@platforms.2"/>
+            <expression expression="[0-9]+" expressionType="REGEX"/>
+        </annotations>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_isOn.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Thermostat is on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_getTemperature.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Thermostat get temperature" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_getRange.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Thermostat get range" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_isOn.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Dimmer light is on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_getDimmer.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Dimmer light get dimmer" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_getRange.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Dimmer light get range" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Lightbulb_isOn.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Light bulb is on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Alarm_getState.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Alarm get state" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Sensor_getStatus.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Sensor get status" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_isOn.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Washing machine is on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_getCycle.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Washing machine get cycle" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_isOn.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Oven is on" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_getTemperatureRange.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Oven get temperature range" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_getTemperature.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Oven get temperature" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.getDeviceList.input.parameters" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Get device list" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_isOn.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_getTemperature.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_turnOn.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_getRange.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Thermostat_setTemperature.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_isOn.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_turnOn.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_setDimmer.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_getDimmer.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Dimmerlightbulb_getRange.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Lightbulb_isOn.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Lightbulb_turnOn.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Alarm_getState.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Alarm_setState.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Sensor_getStatus.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_turnOn.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_isOn.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_getCycle.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.WashingMachine_setCycle.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_turnOn.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_isOn.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_getTemperatureRange.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_getTemperature.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.Oven_setTemperature.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.getDeviceList.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Result" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.login.input.parameters" refType="Parameter">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Enter your user credentials" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.login.input.parameters.UserName" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="User name" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Your user name for the home system" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:MandatoryField">
+            <errorMessage xsi:type="ns3:TextFeedback" text="Please specify your username" type="Error" languages="//@languages.0" platforms="//@platforms.0"/>
+        </annotations>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:Validation" languages="//@languages.0">
+            <message xsi:type="ns3:TextFeedback" text="Invalid user name" type="Error" languages="//@languages.0" platforms="//@platforms.2"/>
+            <expression expression="[a-zA-Z]+" expressionType="REGEX"/>
+        </annotations>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.login.input.parameters.Password" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:VisualProperty" property="obscured"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Password" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Your password  for the home system" type="Help" languages="//@languages.0" platforms="//@platforms.0"/>
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:MandatoryField">
+            <errorMessage xsi:type="ns3:TextFeedback" text="Please specify your password" type="Error" languages="//@languages.0" platforms="//@platforms.0"/>
+        </annotations>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="HomeScenarioWSversion2Service.login.output.parameters.out" refType="ParameterElement">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Logged-in" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="device" refType="DataType">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Device" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="device.id" refType="DataType">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Identifier" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="device.name" refType="DataType">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Name" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="device.description" refType="DataType">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Description" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="device.manufacturer" refType="DataType">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Manufacturer" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="device.position" refType="DataType">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Position" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="device.positiondescription" refType="DataType">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Position description" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="device.serialnumber" refType="DataType">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Serial number" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="device.technology" refType="DataType">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="Technology" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <referenceObjects hierarchicalName="device.url" refType="DataType">
+        <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:TextFeedback" text="URL" type="Label" languages="//@languages.0" platforms="//@platforms.0"/>
+    </referenceObjects>
+    <platforms id="Desktop"/>
+    <platforms id="Mobile"/>
+    <platforms id="Mutlimodal desktop"/>
+    <platforms id="Mutlimodal mobile"/>
+    <platforms id="Smartphone"/>
+    <platforms id="Vocal"/>
+    <languages id="English"/>
+    <languages id="French"/>
+    <languages id="German"/>
+    <languages id="Italian"/>
+</ns2:AnnotationModel>

@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<abstractUIModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.serenoa-fp7.eu/ AUI.xsd"
+ xmlns="http://www.serenoa-fp7.eu/"
+ currentUnit="login_iu">
+    <!-- 
+CHANGE v 0.4
+- fixed a swapped ext function call and value assignment
+- fixed the references to the preferences, that needed the selection of Demo or Serenoa groups
+CHANGE v 0.3
+-fixed the definition with the new version of the ctic service
+-fixed some preferences reference (value element missing and the id attribute is name)
+-fixed the condition for the registration_home from /registered to /uiData/user/@id
+
+CHANGES v 0.2
+- added a grouping with role "navigation" for each AIU that contains the navigators
+- removed one grouping with only one child
+- fixed some typos on data references
+- added a logout activator to the main application menu
+- added the color blindness serenoa preference
+
+CHANGES  v 0.1
+
+- fixed the id and id references that were duplicated
+- removed the double role attribute (if you need more values, probably it is better to insert them through 
+  comma separated values
+- changed the role back for the navigators to a special back connection
+- removed the role home from navigators. It can be calculated from the connections and the role of the 
+  referenced abstract interaction unit.
+- changed the initialUnit attribute to currentUnit attribute. Its first value is the initial one
+
+Comments for CTIC
+
+- check the model to see if there are inconsistencies or something unclear
+- implement a login mechanism into the rest ws
+- I assumed that the car results are already filtered by the ws according to his/her location if needed
+  If it is not the case, we should think about how to support it
+- Please note that we did not add any role to navigators, beacause you needed two kind of information:
+     - for the main_menu, it is possible to calculate such role simply checking the connection target AIU and 
+       its role attribute. So if the connection referenced by a navigator points to an AIU with role "main_menu"
+       should be equivalent to the "main_menu" role you set to navigators
+     - for the back role, we think that it is rather a type of connection that a navigator role, so we added 
+       new connection type. In this case, your role attribute is equivalent to the fact that a navigator 
+       references a connection of type back 
+    
+    -->
+    <externalModelList>
+        <externalModel URI="dataModel.xsd" id="data"/>
+    </externalModelList>
+    <!-- External Functions from http://idi.fundacionctic.org/mobSerenoaWS/application.wadl -->
+    <externalFunctionList>
+        <externalFunction name="login" >
+            <rest resource="http://idi.fundacionctic.org/mobSerenoaWS/login/{user}/password/{password}" method="POST" definitionURL="http://idi.fundacionctic.org/mobSerenoaWS/application.wadl"/>
+            <input name="user">
+               <simpleType type="string"/>
+            </input>
+            <input name="password">
+                <simpleType type="string"/>
+            </input>
+            <input name="id">
+                <simpleType type="string"/>
+            </input>
+            <output name="login">
+                <complexType xPath="/xs:complexType[name='login']" externalModelId="data"/>
+            </output>
+        </externalFunction>
+        <externalFunction name="putUser">
+            <rest resource="http://idi.fundacionctic.org/mobSerenoaWS/user/{id}" method="PUT" definitionURL="http://idi.fundacionctic.org/mobSerenoaWS/application.wadl"/>
+            <input name="id">
+                <simpleType type="string"/>
+            </input>
+            <input name="user">
+                <complexType xPath="/xs:complexType[name='user']" externalModelId="data"/>
+            </input>
+        </externalFunction>
+        <externalFunction name="getUser" >
+            <rest resource="http://idi.fundacionctic.org/mobSerenoaWS/user/{id}" method="GET" definitionURL="http://idi.fundacionctic.org/mobSerenoaWS/application.wadl" />
+            <input name="id">
+                <simpleType type="string"/>
+            </input>
+            <output name="user" >
+                <complexType xPath="/xs:complexType[name='user']" externalModelId="data" />
+            </output>
+        </externalFunction>
+        <!--<externalFunction name="getAgencies" >
+            <rest resource="http://idi.fundacionctic.org/mobSerenoaWS/agencies/user/{id}" method="GET" definitionURL="http://idi.fundacionctic.org/mobSerenoaWS/application.wadl"/>
+            <input name="id">
+                <simpleType type="string"/>
+            </input>
+            <output name="agencies">
+                <complexType xPath="/xs:element[name='agencies']" externalModelId="data"/>
+            </output>
+        </externalFunction>-->
+        <externalFunction name="getAgencies" >
+            <rest resource="http://idi.fundacionctic.org/mobSerenoaWS/agencies" method="GET" definitionURL="http://idi.fundacionctic.org/mobSerenoaWS/application.wadl"/>
+            <!--<input name="id">
+                <simpleType type="string"/>
+            </input>-->
+            <output name="agencies">
+                <complexType xPath="/xs:element[name='agencies']" externalModelId="data"/>
+            </output>
+        </externalFunction>
+        <!--<externalFunction name="getCars" >
+            <rest resource="http://idi.fundacionctic.org/mobSerenoaWS/cars/user/{id}" method="GET" definitionURL="http://idi.fundacionctic.org/mobSerenoaWS/application.wadl"/>
+            <input name="id">
+                <simpleType type="string"/>
+            </input>
+            <output name="cars">
+                <complexType xPath="/xs:element[name='cars']" externalModelId="data"/>
+            </output>
+        </externalFunction>-->
+        <externalFunction name="getCars" >
+            <rest resource="http://idi.fundacionctic.org/mobSerenoaWS/cars" method="GET" definitionURL="http://idi.fundacionctic.org/mobSerenoaWS/application.wadl"/>
+            <!--<input name="id">
+                <simpleType type="string"/>
+            </input>-->
+            <output name="cars">
+                <complexType xPath="/xs:element[name='cars']" externalModelId="data"/>
+            </output>
+        </externalFunction>
+        <externalFunction name="getCarsByAgency" >
+            <rest resource="http://idi.fundacionctic.org/mobSerenoaWS/cars/agency/{id}" method="GET" definitionURL="http://idi.fundacionctic.org/mobSerenoaWS/application.wadl"/>
+            <input name="id">
+                <simpleType type="string"/>
+            </input>
+            <output name="cars">
+                <complexType xPath="/xs:element[name='cars']" externalModelId="data"/>
+            </output>
+        </externalFunction>
+    </externalFunctionList>
+    <!--Login-->
+    <abstractInteractionUnit id="login_iu" name="Login" role="Init">
+        <connections>
+            <connection id="registration">
+                <target interactionUnitId="registration_iu"/>
+            </connection>
+            <connection id="login_home">
+                <target interactionUnitId="home_iu">
+                    <condition operator="neq">
+                        <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                        <constant value="-1" type="integer"/>
+                    </condition>
+                </target>
+            </connection>
+            <back id="back_login"/>
+        </connections>
+        <grouping id="login_group">
+            <edit id="login_username"/>
+            <edit id="login_password"/>
+            <activator id="login_activator" connectionReference="login_home">
+                <events>
+                    <activation>
+                        <eventHandler>
+                            <invokeFunction name="login">
+                                <input name="username">
+                                    <value>
+                                        <entityReference xPath="/descendant::edit[@id='login_username']/@value"/>
+                                    </value>
+                                </input>
+                                <input name="password">
+                                    <value>
+                                        <entityReference xPath="/descendant::edit[@id='login_password']/@value"/>
+                                    </value>
+                                </input>
+                                <input name="id">
+                                    <value>
+                                        <constant value="-1" type="string"/>
+                                    </value>
+                                </input>
+                                <output name="login" xPath="/uiData/login" externalModelId="data"/>
+                            </invokeFunction>
+                            <!-- if login is successful, initialize the user data -->
+                            <if>
+                                <condition operator="eq">
+                                    <entityReference xPath="/uiData/login/valid" externalModelId="data"/>
+                                    <constant value="true" type="boolean"/>
+                                </condition>
+                                <then>
+                                    <update>
+                                        <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                                        <value>
+                                            <entityReference xPath="/descendant::edit[@id='login_username']/@value"/>
+                                        </value>
+                                    </update>
+                                    <invokeFunction name="getUser">
+                                        <input name="id">
+                                            <value>
+                                                <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                                            </value>
+                                        </input>
+                                        <output name="user" xPath="/uiData/user" externalModelId="data"/>
+                                    </invokeFunction>
+                                </then>
+                            </if>
+                        </eventHandler>
+                    </activation>
+                </events>
+            </activator>
+            <!-- [davide] added a navigation grouping here -->
+            <grouping id="login_navigation" role="navigation">
+                <navigator id="registration_navigator" connectionReference="registration"/>
+                <navigator id="login_back" connectionReference="back_login"/>
+            </grouping>
+        </grouping>
+    </abstractInteractionUnit>
+    
+    <!--CTIC: According to the Data Structure section available at the wiki
+		(http://serenoa.morfeo-project.org/wiki/index.php/Demonstrator_M18#Data_structure) there are some mandatory
+		fields to be filled in by the user as part of the registration process
+        [davide] The data model has minOccurs="1" for the mandatory fields...
+    -->
+    
+    <!--Registration-->
+    <abstractInteractionUnit id="registration_iu" name="Registration" role="Init">
+        <connections>
+            <connection id="registration_home">
+                <target interactionUnitId="home_iu">
+                    <condition operator="neq">
+                        <entityReference xPath="/uiData/user/@id" externalModelId="data"/>
+                        <constant type="integer" value="-1"/>
+                    </condition>
+                </target>
+            </connection>
+            <connection id="registration_login">
+                <target interactionUnitId="login_iu"/>
+            </connection>
+            <back id="back_registration"/>
+        </connections>
+        <grouping id="register_main">
+            <!-- [davide] I added username and password for managing the login -->
+            <edit id="registration_username">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='username']/value" externalModelId="data"/>
+            </edit>
+            <edit id="registration_password">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='password']/value" externalModelId="data"/>
+            </edit>
+            <edit id="registration_name">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='first name']/value" externalModelId="data"/>
+            </edit>
+            <edit id="registration_lastName">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='last name']/value" externalModelId="data"/>
+            </edit>
+            <singleChoice id="registration_gender">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='gender']/value" externalModelId="data"/>
+                <choiceElement value="male"/>
+                <choiceElement value="female"/>
+            </singleChoice>
+            <edit id="registration_email">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='email']/value" externalModelId="data"/>
+            </edit>
+            <edit id="registration_birth_date">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='birth date']/value" externalModelId="data"/>
+            </edit>
+            <grouping id="registration_address">
+                <edit id="registration_street">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='street']/value" externalModelId="data"/>
+                </edit>
+                <edit id="registration_poBox">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='PO box']/value" externalModelId="data"/>
+                </edit>
+                <edit id="registration_zip_code">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='zip Code']/value" externalModelId="data"/>
+                </edit>
+                <edit id="registration_location">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='location']/value" externalModelId="data"/>
+                </edit>
+                <singleChoice id="registration_country">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='country']/value" externalModelId="data"/>
+                    <choiceElement value="Italy"/>
+                    <choiceElement value="Poland"/>
+                    <choiceElement value="Spain"/>
+                    <!-- many more -->
+                </singleChoice>
+            </grouping>
+            <activator id="registration_activator" connectionReference="registration_home">
+                <events>
+                    <activation>
+                        <eventHandler>
+                            <invokeFunction name="putUser">
+                                <input name="id">
+                                    <value>
+                                        <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                                    </value>
+                                </input>
+                                <input name="user">
+                                    <value>
+                                        <entityReference xPath="/uiData/user" externalModelId="data"/>
+                                    </value>
+                                </input>
+                            </invokeFunction>
+                        </eventHandler>
+                    </activation>
+                </events>
+            </activator>
+            <!-- [davide] added a navigation grouping here -->
+            <grouping id="registration_navigation" role="navigation">
+                <navigator id="login_navigator" connectionReference="registration_login"/>
+                <navigator id="registration_back" connectionReference="back_registration"/>
+            </grouping>
+        </grouping>
+        <events>
+            <onRender>
+                <eventHandler>
+                    <!-- assumption: call getUser with id = -1 in order to get an empty one -->
+                    <invokeFunction name="getUser">
+                        <input name="id">
+                            <value>
+                                <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                            </value>
+                        </input>
+                        <output xPath="/uiData/user" externalModelId="data"/>
+                    </invokeFunction>
+                </eventHandler>
+            </onRender>
+        </events>
+    </abstractInteractionUnit>
+    
+    <abstractInteractionUnit role="main-menu" id="home_iu" name="Main menu">
+        <connections>
+            <connection id="home2preferences">
+                <target interactionUnitId="preferences_iu"/>
+            </connection>
+            <connection id="home2userInfo">
+                <target interactionUnitId="userInfo_iu"/>
+            </connection>
+            <connection id="home2searchInfo">
+                <target interactionUnitId="searchInfo_iu"/>
+            </connection>
+            <connection id="home2login">
+                <target interactionUnitId="login_iu"/>
+            </connection>
+            <back id="back_home"/>
+        </connections>
+        <!-- [davide] added a the role navigation here -->
+        <grouping id="home_main" role="navigation">
+            <navigator id="home_preferences" connectionReference="home2preferences"/>
+            <navigator id="home_userInfo" connectionReference="home2userInfo"/>
+            <navigator id="home_searchInfo" connectionReference="home2searchInfo"/>
+            <navigator id="home_back" connectionReference="back_home"/>
+            <activator id="home_logout" connectionReference="home2login">
+                <events>
+                    <activation>
+                        <eventHandler>
+                            <update>
+                                <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                                <value>
+                                    <!-- resets the user id -->
+                                    <constant value="-1" type="string"/>
+                                </value>
+                            </update>
+                        </eventHandler>
+                    </activation>
+                </events>
+            </activator>
+        </grouping>
+    </abstractInteractionUnit>
+    
+    <abstractInteractionUnit id="preferences_iu" name="Preferences" role="Preferences">
+        <connections>
+            <connection id="preferences2home">
+                <target interactionUnitId="home_iu"/>
+            </connection>
+            <connection id="preferences2userInfo">
+                <target interactionUnitId="userInfo_iu"/>
+            </connection>
+            <back id="back_preferences" />
+        </connections>
+        <grouping id="preferences_main">
+            <grouping id="serenoa_preferences">
+                <singleChoice id="location_awareness">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='location_awareness']/value"/>
+                    <choiceElement value="yes"/>
+                    <choiceElement value="no"/>
+                </singleChoice>
+                <singleChoice id="color_blindness">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='color_blindness']/value"/>
+                    <choiceElement value="yes"/>
+                    <choiceElement value="no"/>
+                </singleChoice>
+            </grouping>
+            <grouping id="application_preferences">
+                <singleChoice id="choose_by_agency">
+                    <binding xPath="/uiData/user/preferences[@id='Demo']/preference[@name='choose_by_agency']/value"/>
+                    <choiceElement value="yes"/>
+                    <choiceElement value="no"/>
+                </singleChoice>
+                <singleChoice id="ordering">
+                    <binding xPath="/uiData/user/preferences[@id='Demo']/preference[@name='ordering']/value"/>
+                    <choiceElement value="price"/>
+                    <choiceElement value="name"/>
+                </singleChoice>
+                <singleChoice id="location_selection">
+                    <binding xPath="/uiData/user/preferences[@id='Demo']/preference[@name='location_selection']/value"/>
+                    <choiceElement value="map"/>
+                    <choiceElement value="list"/>
+                </singleChoice>
+            </grouping>
+            <activator id="preferences_userInfo" connectionReference="preferences2userInfo">
+                <events>
+                    <activation>
+                        <eventHandler>
+                            <!-- save preferences -->
+                            <invokeFunction name="putUser">
+                                <input name="id">
+                                    <value>
+                                        <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                                    </value>
+                                </input>
+                                <input name="user">
+                                    <value>
+                                        <entityReference xPath="/uiData/user" externalModelId="data"/>
+                                    </value>
+                                </input>
+                            </invokeFunction>
+                        </eventHandler>
+                    </activation>
+                </events>
+            </activator>
+            <!--CTIC: We have added a new home role in order to semantically annotate the navigators
+				pointing to the main-menu interaction unit
+				[davide] such information is redundant, it is possible to calculate it from the
+				connection + the role of the referenced abstract interaction unit
+            -->
+            <!-- [davide] added a navigation grouping here -->
+            <grouping id="preferences_navigation" role="navigation">
+                <navigator id="preferences_home" connectionReference="preferences2home"/>
+                <navigator id="preferences_back" connectionReference="back_preferences"/>
+            </grouping>
+        </grouping>
+        <events>
+            <onRender>
+                <eventHandler>
+                    <invokeFunction name="getUser">
+                        <input name="id">
+                            <value>
+                                <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                            </value>
+                        </input>
+                        <output xPath="/uiData/user" externalModelId="data"/>
+                    </invokeFunction>
+                </eventHandler>
+            </onRender>
+        </events>
+    </abstractInteractionUnit>
+    
+    <abstractInteractionUnit id="userInfo_iu" role="User" name="User Information">
+        <connections>
+            <connection id="userInfo2home">
+                <target interactionUnitId="home_iu"/>
+            </connection>
+            <connection id="userInfo2searchInfo">
+                <target interactionUnitId="searchInfo_iu"/>
+            </connection>
+            <back id="back_userInfo"/>
+        </connections>
+        <!-- more groupings ? -->
+        <grouping id="userInfo_main">
+            <!-- [davide] this interaction unit is actually really similar to the 
+                 registration one... Can we collapse them?
+            -->
+            <edit id="userInfo_password">
+                <binding xPath="/uiData/user/account/password" externalModelId="data"/>
+            </edit>
+            <edit id="userInfo_name">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='first name']/value" externalModelId="data"/>
+            </edit>
+            <edit id="userInfo_lastName">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='last name']/value" externalModelId="data"/>
+            </edit>
+            <singleChoice id="userInfo_gender">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='gender']/value" externalModelId="data"/>
+                <choiceElement value="male"/>
+                <choiceElement value="female"/>
+            </singleChoice>
+            <edit id="userInfo_email">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='email']/value" externalModelId="data"/>
+            </edit>
+            <edit id="userInfo_birth_date">
+                <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='birth date']/value" externalModelId="data"/>
+            </edit>
+            <grouping id="userInfo_address">
+                <edit id="userInfo_street">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='street']/value" externalModelId="data"/>
+                </edit>
+                <edit id="userInfo_poBox">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='PO box']/value" externalModelId="data"/>
+                </edit>
+                <edit id="userInfo_zip_code">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='zip Code']/value" externalModelId="data"/>
+                </edit>
+                <edit id="userInfo_location">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='location']/value" externalModelId="data"/>
+                </edit>
+                <singleChoice id="userInfo_country">
+                    <binding xPath="/uiData/user/preferences[@id='Serenoa']/preference[@name='country']/value" externalModelId="data"/>
+                    <choiceElement value="Italy"/>
+                    <choiceElement value="Poland"/>
+                    <choiceElement value="Spain"/>
+                    <!-- many more -->
+                </singleChoice>
+            </grouping>
+            <activator id="userInfo_activator" connectionReference="registration_home">
+                <events>
+                    <activation>
+                        <eventHandler>
+                            <!-- save preferences -->
+                            <invokeFunction name="putUser">
+                                <input name="id">
+                                    <value>
+                                        <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                                    </value>
+                                </input>
+                                <input name="user">
+                                    <value>
+                                        <entityReference xPath="/uiData/user" externalModelId="data"/>
+                                    </value>
+                                </input>
+                            </invokeFunction>
+                        </eventHandler>
+                    </activation>
+                </events>
+            </activator>
+            <!-- [davide] added a navigation grouping here -->
+            <grouping id="userInfo_navigation" role="navigation">
+                <navigator id="userInfo_home" connectionReference="userInfo2home"/>
+                <navigator id="userInfo_searchInfo" connectionReference="userInfo2searchInfo"/>
+                <navigator id="userInfo_back" connectionReference="back_userInfo"/>
+            </grouping>
+        </grouping>
+        <events>
+            <onRender>
+                <eventHandler>
+                    <invokeFunction name="getUser">
+                        <input name="id">
+                            <value>
+                                <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                            </value>
+                        </input>
+                        <output xPath="/uiData/user" externalModelId="data"/>
+                    </invokeFunction>
+                </eventHandler>
+            </onRender>
+        </events>
+    </abstractInteractionUnit>
+    
+    <abstractInteractionUnit id="searchInfo_iu" role="Search" name="Car Search">
+        <connections>
+            <connection id="searchInfo2home">
+                <target interactionUnitId="home_iu"/>
+            </connection>
+            <connection id="submit_data">
+                <target interactionUnitId="agencyList_iu">
+                    <condition operator="and">
+                        <condition operator="eq">
+                            <entityReference xPath="/uiData/user/preferences[@id='Demo']/preference[@name='choose_by_agency']/value" externalModelId="data"/>
+                            <constant value="yes" type="string"/>
+                        </condition>
+                        <condition operator="eq">
+                            <entityReference xPath="/uiData/user/preferences[@id='Demo']/preference[@name='location_selection']/value" externalModelId="data"/>
+                            <constant value="list" type="string"/>
+                        </condition>
+                    </condition>
+                </target> 
+                <target interactionUnitId="geoAgencyList_iu">
+                    <condition operator="and">
+                        <condition operator="eq">
+                            <entityReference xPath="/uiData/user/preferences[@id='Demo']/preference[@name='choose_by_agency']/value" externalModelId="data"/>
+                            <constant value="yes" type="string"/>
+                        </condition>
+                        <condition operator="eq">
+                            <entityReference xPath="/uiData/user/preferences[@id='Demo']/preference[@name='location_selection']/value" externalModelId="data"/>
+                            <constant value="map" type="string"/>
+                        </condition>
+                    </condition>
+                </target>
+                <target interactionUnitId="resultsList_iu" >
+                    <condition operator="eq">
+                        <entityReference xPath="/uiData/user/preferences[@id='Demo']/preference[@name='choose_by_agency']/value" externalModelId="data"/>
+                        <constant value="no" type="string"/>
+                    </condition>
+                </target>
+            </connection>
+            <back id="back_searchInfo"/>
+        </connections>
+        <grouping id="searchInfo_main">
+            <!-- I assume that all the search preferences are saved as user properties and that
+                the get agencies/cars operations will take into account them
+                Maybe the cars and agencies resources should have the user id as parameter -->
+            <edit id="searchInfo_location">
+                <binding xPath="/uiData/user/preferences[@id='Demo']/preference[@name='location']/value" externalModelId="data"/>
+            </edit>
+            <edit id="accepted_distance">
+                <binding xPath="/uiData/user/preferences[@id='Demo']/preference[@name='accepted_distance']/value" externalModelId="data"/>
+            </edit>
+            <singleChoice id="color">
+                <binding xPath="/uiData/user/preferences[@id='Demo']/preference[@name='color']/value" externalModelId="data"/>
+                <choiceElement value="red"/>
+                <choiceElement value="green"/>
+                <choiceElement value="blue"/>
+                <!-- many more -->
+            </singleChoice>
+            <!-- [davide] I removed the grouping because there was only one child -->
+                <activator id="request_submit" connectionReference="submit_data">
+                    <events>
+                        <activation>
+                            <eventHandler>
+                                <!-- save the currently edited preferences -->
+                                <invokeFunction name="putUser">
+                                    <input name="id">
+                                        <value>
+                                            <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                                        </value>
+                                    </input>
+                                    <input name="user">
+                                        <value>
+                                            <entityReference xPath="/uiData/user" externalModelId="data"/>
+                                        </value>
+                                    </input>
+                                </invokeFunction>
+                            </eventHandler>
+                        </activation>
+                    </events>
+                </activator>
+            <!-- [davide] added a navigation grouping here -->
+            <grouping id="searchInfo_navigation" role="navigation">
+                <navigator id="submitRequest_home" connectionReference="searchInfo2home"/>
+                <navigator id="searchInfo_back" connectionReference="back_searchInfo"/>
+            </grouping>
+        </grouping>
+        <events>
+            <onRender>
+                <!-- refresh the current user preferences -->
+                <eventHandler>
+                    <invokeFunction name="getUser">
+                        <input name="id">
+                            <value>
+                                <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                            </value>
+                        </input>
+                        <output xPath="/uiData/user" externalModelId="data"/>
+                    </invokeFunction>
+                </eventHandler>
+            </onRender>
+        </events>
+    </abstractInteractionUnit>
+    
+    <abstractInteractionUnit id="agencyList_iu" role="Search" name="Agency List">
+        <connections>
+            <connection id="agencyList2home">
+                <target interactionUnitId="home_iu"/>
+            </connection>
+            <connection id="agencyList2results">
+                <target interactionUnitId="resultsList_iu"/>
+            </connection>
+            <back id="back_agencyList"/>
+        </connections>
+        <grouping id="agencyList_main">
+            <!-- list reference and list item refence needed here -->
+            <repetition id="agencyTemplate" listElementAlias="ag">
+                <listReference xPath="/uiData/agencies/agency" externalModelId="data"/>
+                <onlyOutput id="agencyList_itemName">
+                    <binding xPath="ag/@name"/>
+                </onlyOutput>
+                <navigator id="agency_detail" connectionReference="agencyList2results">
+                    <binding xPath="ag/@name"/>
+                    <events>
+                        <activation>
+                            <eventHandler>
+                                <update>
+                                    <entityReference xPath="/uiData/@selected_agency" externalModelId="data"/>
+                                    <value>
+                                        <entityReference xPath="ag/@id" externalModelId="data"/>
+                                    </value>
+                                </update>
+                            </eventHandler>
+                        </activation>
+                    </events>
+                </navigator>
+            </repetition>
+            <!-- [davide] added a navigation grouping here -->
+            <grouping id="agencyList_navigation" role="navigation">
+                <navigator id="agencyList_home" connectionReference="agencyList2home"/>
+                <navigator id="agencyList_back" connectionReference="back_agencyList"/>
+            </grouping>
+        </grouping>
+        <events>
+            <onRender>
+                <eventHandler>
+                    <invokeFunction name="getAgencies">
+                        <!--<input name="id">
+                            <value>
+                                <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                            </value>
+                        </input>-->
+                        <output xPath="/uiData/agencies" externalModelId="data"/>
+                    </invokeFunction>
+                </eventHandler>
+            </onRender>
+        </events>
+    </abstractInteractionUnit>
+    
+    
+    <!-- CTIC: Geolocated information -->
+    <abstractInteractionUnit id="geoAgencyList_iu" role="Search" name="Agency Map">
+        <connections>
+            <connection id="geoAgencyList2home">
+                <target interactionUnitId="home_iu"/>
+            </connection>
+            <connection id="geoAgencyList2results">
+                <target interactionUnitId="resultsList_iu"/>
+            </connection>
+            <back id="back_geoAgencyList"/>
+        </connections>
+        <!-- CTIC: role added to support geolocation -->
+        <grouping role="geo" id="geoAgencyList_main">
+            <!-- list reference and list item refence needed here -->
+            <repetition id="geoAgencyTemplate">
+                <listReference xPath="/uiData/agencies/agency" externalModelId="data"/>
+                <navigator id="geo_agency_detail" connectionReference="geoAgencyList2results">
+                    <!-- [davide] please check if it is ok -->
+                    <events>
+                        <activation>
+                            <eventHandler>
+                                <update>
+                                    <entityReference xPath="/uiData/@selected_agency"/>
+                                    <value>
+                                        <entityReference xPath="ag/@id" externalModelId="data"/>
+                                    </value>
+                                </update>
+                            </eventHandler>
+                        </activation>
+                    </events>
+                </navigator>
+            </repetition>
+            <!-- [davide] added a navigation grouping here -->
+            <grouping id="geoAgencyList_navigation" role="navigation">
+                <navigator id="geoAgencyList_home" connectionReference="geoAgencyList2home"/>
+                <navigator id="geoAgencyList_back" connectionReference="back_geoAgencyList"/>
+            </grouping>
+        </grouping>
+        <events>
+            <onRender>
+                <eventHandler>
+                    <invokeFunction name="getAgencies">
+                        <input name="id">
+                            <value>
+                                <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                            </value>
+                        </input>
+                        <output xPath="/uiData/agencies" externalModelId="data"/>
+                    </invokeFunction>
+                </eventHandler>
+            </onRender>
+        </events>
+    </abstractInteractionUnit>
+    
+    <abstractInteractionUnit id="resultsList_iu" role="Search" name="Car Results">
+        <connections>
+            <connection id="resultList2home">
+                <target interactionUnitId="home_iu"/>
+            </connection>
+            <connection id="resultList2CarDetail">
+                <target interactionUnitId="carDetail_iu"/>
+            </connection>
+            <back id="back_resultsList"/>
+        </connections>
+        <grouping id="resultList_main">
+            <repetition id="carTemplate" listElementAlias="car">
+                <listReference xPath="/uiData/cars/car" externalModelId="data"/>
+                <onlyOutput id="car_model">
+                    <binding xPath="car/@model"/>
+                </onlyOutput>
+                <onlyOutput id="car_price">
+                    <binding xPath="car/@price" />
+                </onlyOutput>
+                <navigator id="car_detail" connectionReference="resultList2CarDetail">
+                    <binding xPath="car/@model"/>
+                    <events>
+                        <activation>
+                            <eventHandler>
+                                <update>
+                                    <entityReference xPath="/uiData/@selected_car" externalModelId="data"/>
+                                    <value>
+                                        <entityReference xPath="car/@model" externalModelId="data"/>
+                                    </value>
+                                </update>
+                            </eventHandler>
+                        </activation>
+                    </events>
+                </navigator>
+            </repetition>
+            <!-- [davide] added a navigation grouping here -->
+            <grouping id="resultList_navigation" role="navigation">
+                <navigator id="resultList_home" connectionReference="resultList2home"/>
+                <navigator id="resultsList_back" connectionReference="back_resultsList"/>
+            </grouping>
+        </grouping>
+        <events>
+            <onRender>
+                <eventHandler>
+                    <if>
+                        <!-- [davide] there was a not needed eq operator here. -->
+                        <condition>
+                            <entityReference xPath="/uiData/user/preferences[@id='Demo']/preference[@name='choose_by_agency']/value" externalModelId="data"/>
+                        </condition>
+                        <then>
+                            <!-- [davide] changed to use the new car service -->
+                            <invokeFunction name="getCarsByAgency">
+                                <input name="id">
+                                    <value>
+                                        <entityReference xPath="/uiData/agencies/agency[@id=/uiData/@selected_agency]" externalModelId="data"/>
+                                    </value>
+                                </input>
+                                <output xPath="/uiData/cars" externalModelId="data"/>
+                            </invokeFunction>
+                        </then>
+                        <else>
+                            <!-- get the resource from the web service -->
+                            <invokeFunction name="getCars">
+                                <!--<input name="id">
+                                    <value>
+                                        <entityReference xPath="/uiData/@user_id" externalModelId="data"/>
+                                    </value>
+                                </input>-->
+                                <output xPath="/uiData/cars" externalModelId="data"/>
+                            </invokeFunction>
+                        </else>
+                    </if>
+                </eventHandler>
+            </onRender>
+        </events>
+    </abstractInteractionUnit>
+    
+    <abstractInteractionUnit id="carDetail_iu" role="Search" name="Car Detail">
+        <connections>
+            <connection id="carDetail2home">
+                <target interactionUnitId="home_iu"/>
+            </connection>
+            <back id="back_carDetail"/>
+        </connections>
+        <grouping id="carDetail_main">
+            <onlyOutput id="carDetail_description">
+                <binding xPath="/uiData/cars/car[@model=/uiData/selected_car]/@manufacturer"/>
+            </onlyOutput>
+            <onlyOutput id="carDetail_price">
+                <binding xPath="/uiData/cars/car[@model=/uiData/selected_car]/@price"/>
+            </onlyOutput>
+            <repetition id="Extras" listElementAlias="extra">
+                <listReference xPath="/uiData/cars/car[@model=/uiData/selected_car]/extras/extra" externalModelId="data"/>
+                <onlyOutput id="car_extra">
+                    <binding xPath="extra"/>
+                </onlyOutput>
+            </repetition>
+            <!-- [davide] added a navigation grouping here -->
+            <grouping id="carDetail_navigation" role="navigation">
+                <navigator id="carDetail_home" connectionReference="carDetail2home"/>
+                <navigator id="carDetail_back" connectionReference="back_carDetail"/>
+            </grouping>
+        </grouping>
+    </abstractInteractionUnit>
+</abstractUIModel>

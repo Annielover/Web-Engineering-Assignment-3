@@ -1,0 +1,26 @@
+<?xmp version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="RegisterAccount">
+    <Task Identifier="RegisterAccount" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="EnterCredentials" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="RegisterAccount"/>
+                <SiblingRight name="Register"/>
+            </Task>
+            <Task Identifier="Register" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="RegisterAccount"/>
+                <SiblingLeft name="EnterCredentials"/>
+                <SiblingRight name="Redirect to profile page"/>
+            </Task>
+            <Task Identifier="Redirect to profile page" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <Parent name="RegisterAccount"/>
+                <SiblingLeft name="Register"/>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

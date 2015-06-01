@@ -1,0 +1,32 @@
+<?xmp version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="Notify user">
+    <Task Identifier="Notify user" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="Profile is updated" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnabling"/>
+                <Parent name="Notify user"/>
+                <SiblingRight name="Notify user of update"/>
+            </Task>
+            <Task Identifier="Notify user of update" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <Parent name="Notify user"/>
+                <SiblingLeft name="Profile is updated"/>
+                <SubTask>
+                    <Task Identifier="Display pop-up message" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="Parallel"/>
+                        <Parent name="Notify user of update"/>
+                        <SiblingRight name="Play sound"/>
+                    </Task>
+                    <Task Identifier="Play sound" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Parent name="Notify user of update"/>
+                        <SiblingLeft name="Display pop-up message"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

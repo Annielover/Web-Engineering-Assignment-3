@@ -1,0 +1,1303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://giove.isti.cnr.it" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns3="uri:xs" xmlns:ns4="http://schemas.xmlsoap.org/wsdl/" type="cui_desktop" schema-version="1.4.12">
+    <external_functions/>
+    <data>
+        <xs:schema finalDefault="" blockDefault="" elementFormDefault="unqualified" attributeFormDefault="unqualified"/>
+    </data>
+    <presentation name="Enter_login_UserName_presentation">
+        <connections>
+            <elementary_conn interactor_id="P1_Invoke_login" presentation_name="Output__login_parameters_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P1_HomeScenarioWSversion2Service" hidden="false">
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Enter_login_UserName_presentation_header" hidden="false">
+                <properties fieldset="false" bullet="false" position="column">
+                    <label label_position="left">
+                        <text role="heading1" margin-top="0px" margin-bottom="0px" margin-left="0px;" margin-right="0px;" border-color="#000000" border="2px" border-style="solid">
+                            <string>Enter login UserName presentation</string>
+                            <font_settings name="arial" color="#FFFFFF" size="28pt" align="center" mark="false"/>
+                        </text>
+                    </label>
+                    <background>
+                        <background_color>#32639A</background_color>
+                    </background>
+                </properties>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Enter_login_UserName_presentation_header_breadcrumb" hidden="false">
+                <properties fieldset="false" bullet="false" position="row"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P1_Enter_login_parameters" hidden="false">
+                <text_edit id="P1_Enter_login_UserName" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P1 Enter login UserName</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <text_edit id="P1_Enter_login_Password" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P1 Enter login Password</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <activator id="P1_Invoke_login" enabled="true" focus="false" hidden="false" continuous_update="false">
+                <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                    <label label_position="left">
+                        <text>
+                            <string>P1 Invoke login</string>
+                            <font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                        </text>
+                    </label>
+                </button>
+            </activator>
+            <properties fieldset="true" bullet="false" position="column"/>
+        </grouping>
+        <presentation_settings>
+            <title>Enter_login_UserName_presentation</title>
+            <background>
+                <background_color></background_color>
+                <background_image></background_image>
+            </background>
+            <font_settings mark="false"/>
+        </presentation_settings>
+    </presentation>
+    <presentation name="Output__login_parameters_presentation">
+        <connections>
+            <elementary_conn interactor_id="P4_Go_to_Check_dimmerlightbulb_presentation" presentation_name="Check_dimmerlightbulb_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" presentation_name="Enter_login_UserName_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P4_HomeScenarioWSversion2Service" hidden="false">
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Output__login_parameters_presentation_header" hidden="false">
+                <properties fieldset="false" bullet="false" position="column">
+                    <label label_position="left">
+                        <text role="heading1" margin-top="0px" margin-bottom="0px" margin-left="0px;" margin-right="0px;" border-color="#000000" border="2px" border-style="solid">
+                            <string>Output  login parameters presentation</string>
+                            <font_settings name="arial" color="#FFFFFF" size="28pt" align="center" mark="false"/>
+                        </text>
+                    </label>
+                    <background>
+                        <background_color>#32639A</background_color>
+                    </background>
+                </properties>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Output__login_parameters_presentation_header_breadcrumb" hidden="false">
+                <navigator id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Enter login UserName presentation</string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <properties fieldset="false" bullet="false" position="row"/>
+            </grouping>
+            <description id="P4_Output__login_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                <text>
+                    <label label_position="left">
+                        <text>
+                            <string>P4 Output  login parameters</string>
+                            <font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                        </text>
+                    </label>
+                    <string></string>
+                </text>
+            </description>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P4_Level_2" hidden="false">
+                <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P4_getDeviceList" hidden="false">
+                    <activator id="P4_Invoke_getDeviceList" enabled="true" focus="false" hidden="false" continuous_update="false">
+                        <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                            <label label_position="left">
+<text>
+    <string>P4 Invoke getDeviceList</string>
+    <font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+</text>
+                            </label>
+                        </button>
+                    </activator>
+                    <description id="P4_Output__getDeviceList_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                        <text>
+                            <label label_position="left">
+<text>
+    <string>P4 Output  getDeviceList parameters</string>
+    <font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+</text>
+                            </label>
+                            <string></string>
+                        </text>
+                    </description>
+                    <properties fieldset="true" bullet="false" position="column"/>
+                </grouping>
+                <single_choice cardinality="4" id="P4_pick_from_device" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <drop_down_list>
+                        <label label_position="left">
+                            <text>
+<string>P4 pick from device</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </drop_down_list>
+                </single_choice>
+                <navigator id="P4_Go_to_Check_dimmerlightbulb_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>P4 Go to Check dimmerlightbulb presentation</string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <properties fieldset="true" bullet="false" position="column"/>
+        </grouping>
+        <presentation_settings>
+            <title>Output__login_parameters_presentation</title>
+            <background>
+                <background_color></background_color>
+                <background_image></background_image>
+            </background>
+            <font_settings mark="false"/>
+        </presentation_settings>
+    </presentation>
+    <presentation name="Check_dimmerlightbulb_presentation">
+        <connections>
+            <elementary_conn interactor_id="P9_Go_to_Invoke_Dimmerlightbulb_getRange_presentation" presentation_name="Invoke_Dimmerlightbulb_getRange_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="P9_Go_to_Invoke_Thermostat_isOn_presentation" presentation_name="Invoke_Thermostat_isOn_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="P9_Go_to_Invoke_Oven_getTemperatureRange_presentation" presentation_name="Invoke_Oven_getTemperatureRange_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="P9_Go_to_Enter_WashingMachine_turnOn_on_presentation" presentation_name="Enter_WashingMachine_turnOn_on_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="P9_Go_to_Enter_Lightbulb_turnOn_on_presentation" presentation_name="Enter_Lightbulb_turnOn_on_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="P9_Go_to_Invoke_Alarm_getState_presentation" presentation_name="Invoke_Alarm_getState_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" presentation_name="Output__login_parameters_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" presentation_name="Enter_login_UserName_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P9_HomeScenarioWSversion2Service" hidden="false">
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Check_dimmerlightbulb_presentation_header" hidden="false">
+                <properties fieldset="false" bullet="false" position="column">
+                    <label label_position="left">
+                        <text role="heading1" margin-top="0px" margin-bottom="0px" margin-left="0px;" margin-right="0px;" border-color="#000000" border="2px" border-style="solid">
+                            <string>Check dimmerlightbulb presentation</string>
+                            <font_settings name="arial" color="#FFFFFF" size="28pt" align="center" mark="false"/>
+                        </text>
+                    </label>
+                    <background>
+                        <background_color>#32639A</background_color>
+                    </background>
+                </properties>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Check_dimmerlightbulb_presentation_header_breadcrumb" hidden="false">
+                <navigator id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Enter login UserName presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Output  login parameters presentation</string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <properties fieldset="false" bullet="false" position="row"/>
+            </grouping>
+            <navigator id="P9_Go_to_Invoke_Dimmerlightbulb_getRange_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                <link>
+                    <label label_position="left">
+                        <text>
+                            <string>P9 Go to Invoke Dimmerlightbulb getRange presentation</string>
+                        </text>
+                    </label>
+                </link>
+            </navigator>
+            <navigator id="P9_Go_to_Invoke_Thermostat_isOn_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                <link>
+                    <label label_position="left">
+                        <text>
+                            <string>P9 Go to Invoke Thermostat isOn presentation</string>
+                        </text>
+                    </label>
+                </link>
+            </navigator>
+            <navigator id="P9_Go_to_Invoke_Oven_getTemperatureRange_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                <link>
+                    <label label_position="left">
+                        <text>
+                            <string>P9 Go to Invoke Oven getTemperatureRange presentation</string>
+                        </text>
+                    </label>
+                </link>
+            </navigator>
+            <navigator id="P9_Go_to_Enter_WashingMachine_turnOn_on_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                <link>
+                    <label label_position="left">
+                        <text>
+                            <string>P9 Go to Enter WashingMachine turnOn on presentation</string>
+                        </text>
+                    </label>
+                </link>
+            </navigator>
+            <navigator id="P9_Go_to_Enter_Lightbulb_turnOn_on_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                <link>
+                    <label label_position="left">
+                        <text>
+                            <string>P9 Go to Enter Lightbulb turnOn on presentation</string>
+                        </text>
+                    </label>
+                </link>
+            </navigator>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P9_sensor" hidden="false">
+                <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P9_Sensor_getStatus" hidden="false">
+                    <activator id="P9_Invoke_Sensor_getStatus" enabled="true" focus="false" hidden="false" continuous_update="false">
+                        <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                            <label label_position="left">
+<text>
+    <string>P9 Invoke Sensor getStatus</string>
+    <font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+</text>
+                            </label>
+                        </button>
+                    </activator>
+                    <description id="P9_Output__Sensor_getStatus_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                        <text>
+                            <label label_position="left">
+<text>
+    <string>P9 Output  Sensor getStatus parameters</string>
+    <font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+</text>
+                            </label>
+                            <string></string>
+                        </text>
+                    </description>
+                    <properties fieldset="true" bullet="false" position="column"/>
+                </grouping>
+                <navigator id="P9_Go_to_Invoke_Alarm_getState_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>P9 Go to Invoke Alarm getState presentation</string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <properties fieldset="true" bullet="false" position="column"/>
+        </grouping>
+        <presentation_settings>
+            <title>Check_dimmerlightbulb_presentation</title>
+            <background>
+                <background_color></background_color>
+                <background_image></background_image>
+            </background>
+            <font_settings mark="false"/>
+        </presentation_settings>
+    </presentation>
+    <presentation name="Invoke_Dimmerlightbulb_getRange_presentation">
+        <connections>
+            <elementary_conn interactor_id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" presentation_name="Check_dimmerlightbulb_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" presentation_name="Output__login_parameters_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" presentation_name="Enter_login_UserName_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P10_HomeScenarioWSversion2Service" hidden="false">
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Invoke_Dimmerlightbulb_getRange_presentation_header" hidden="false">
+                <properties fieldset="false" bullet="false" position="column">
+                    <label label_position="left">
+                        <text role="heading1" margin-top="0px" margin-bottom="0px" margin-left="0px;" margin-right="0px;" border-color="#000000" border="2px" border-style="solid">
+                            <string>Invoke Dimmerlightbulb getRange presentation</string>
+                            <font_settings name="arial" color="#FFFFFF" size="28pt" align="center" mark="false"/>
+                        </text>
+                    </label>
+                    <background>
+                        <background_color>#32639A</background_color>
+                    </background>
+                </properties>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Invoke_Dimmerlightbulb_getRange_presentation_header_breadcrumb" hidden="false">
+                <navigator id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Enter login UserName presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Output  login parameters presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Check dimmerlightbulb presentation</string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <properties fieldset="false" bullet="false" position="row"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P10_Dimmerlightbulb_getRange" hidden="false">
+                <activator id="P10_Invoke_Dimmerlightbulb_getRange" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P10 Invoke Dimmerlightbulb getRange</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P10_Output__Dimmerlightbulb_getRange_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P10 Output  Dimmerlightbulb getRange parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P10_Dimmerlightbulb_getDimmer" hidden="false">
+                <activator id="P10_Invoke_Dimmerlightbulb_getDimmer" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P10 Invoke Dimmerlightbulb getDimmer</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P10_Output__Dimmerlightbulb_getDimmer_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P10 Output  Dimmerlightbulb getDimmer parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P10_Dimmerlightbulb_setDimmer" hidden="false">
+                <text_edit id="P10_Enter_Dimmerlightbulb_setDimmer_dimmerValue" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P10 Enter Dimmerlightbulb setDimmer dimmerValue</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <activator id="P10_Invoke_Dimmerlightbulb_setDimmer" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P10 Invoke Dimmerlightbulb setDimmer</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P10_Output__Dimmerlightbulb_setDimmer_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P10 Output  Dimmerlightbulb setDimmer parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P10_Dimmerlightbulb_turnOn" hidden="false">
+                <text_edit id="P10_Enter_Dimmerlightbulb_turnOn_on" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P10 Enter Dimmerlightbulb turnOn on</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <activator id="P10_Invoke_Dimmerlightbulb_turnOn" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P10 Invoke Dimmerlightbulb turnOn</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P10_Output__Dimmerlightbulb_turnOn_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P10 Output  Dimmerlightbulb turnOn parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P10_Dimmerlightbulb_isOn" hidden="false">
+                <activator id="P10_Invoke_Dimmerlightbulb_isOn" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P10 Invoke Dimmerlightbulb isOn</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P10_Output__Dimmerlightbulb_isOn_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P10 Output  Dimmerlightbulb isOn parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <properties fieldset="true" bullet="false" position="column"/>
+        </grouping>
+        <presentation_settings>
+            <title>Invoke_Dimmerlightbulb_getRange_presentation</title>
+            <background>
+                <background_color></background_color>
+                <background_image></background_image>
+            </background>
+            <font_settings mark="false"/>
+        </presentation_settings>
+    </presentation>
+    <presentation name="Invoke_Thermostat_isOn_presentation">
+        <connections>
+            <elementary_conn interactor_id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" presentation_name="Check_dimmerlightbulb_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" presentation_name="Output__login_parameters_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" presentation_name="Enter_login_UserName_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P23_HomeScenarioWSversion2Service" hidden="false">
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Invoke_Thermostat_isOn_presentation_header" hidden="false">
+                <properties fieldset="false" bullet="false" position="column">
+                    <label label_position="left">
+                        <text role="heading1" margin-top="0px" margin-bottom="0px" margin-left="0px;" margin-right="0px;" border-color="#000000" border="2px" border-style="solid">
+                            <string>Invoke Thermostat isOn presentation</string>
+                            <font_settings name="arial" color="#FFFFFF" size="28pt" align="center" mark="false"/>
+                        </text>
+                    </label>
+                    <background>
+                        <background_color>#32639A</background_color>
+                    </background>
+                </properties>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Invoke_Thermostat_isOn_presentation_header_breadcrumb" hidden="false">
+                <navigator id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Enter login UserName presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Output  login parameters presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Check dimmerlightbulb presentation</string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <properties fieldset="false" bullet="false" position="row"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P23_Thermostat_isOn" hidden="false">
+                <activator id="P23_Invoke_Thermostat_isOn" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P23 Invoke Thermostat isOn</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P23_Output__Thermostat_isOn_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P23 Output  Thermostat isOn parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P23_Thermostat_getTemperature" hidden="false">
+                <activator id="P23_Invoke_Thermostat_getTemperature" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P23 Invoke Thermostat getTemperature</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P23_Output__Thermostat_getTemperature_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P23 Output  Thermostat getTemperature parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P23_Thermostat_turnOn" hidden="false">
+                <text_edit id="P23_Enter_Thermostat_turnOn_on" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P23 Enter Thermostat turnOn on</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <activator id="P23_Invoke_Thermostat_turnOn" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P23 Invoke Thermostat turnOn</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P23_Output__Thermostat_turnOn_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P23 Output  Thermostat turnOn parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P23_Thermostat_setTemperature" hidden="false">
+                <text_edit id="P23_Enter_Thermostat_setTemperature_temperature" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P23 Enter Thermostat setTemperature temperature</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <activator id="P23_Invoke_Thermostat_setTemperature" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P23 Invoke Thermostat setTemperature</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P23_Output__Thermostat_setTemperature_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P23 Output  Thermostat setTemperature parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <properties fieldset="true" bullet="false" position="column"/>
+        </grouping>
+        <presentation_settings>
+            <title>Invoke_Thermostat_isOn_presentation</title>
+            <background>
+                <background_color></background_color>
+                <background_image></background_image>
+            </background>
+            <font_settings mark="false"/>
+        </presentation_settings>
+    </presentation>
+    <presentation name="Invoke_Oven_getTemperatureRange_presentation">
+        <connections>
+            <elementary_conn interactor_id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" presentation_name="Check_dimmerlightbulb_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" presentation_name="Output__login_parameters_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" presentation_name="Enter_login_UserName_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P34_HomeScenarioWSversion2Service" hidden="false">
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Invoke_Oven_getTemperatureRange_presentation_header" hidden="false">
+                <properties fieldset="false" bullet="false" position="column">
+                    <label label_position="left">
+                        <text role="heading1" margin-top="0px" margin-bottom="0px" margin-left="0px;" margin-right="0px;" border-color="#000000" border="2px" border-style="solid">
+                            <string>Invoke Oven getTemperatureRange presentation</string>
+                            <font_settings name="arial" color="#FFFFFF" size="28pt" align="center" mark="false"/>
+                        </text>
+                    </label>
+                    <background>
+                        <background_color>#32639A</background_color>
+                    </background>
+                </properties>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Invoke_Oven_getTemperatureRange_presentation_header_breadcrumb" hidden="false">
+                <navigator id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Enter login UserName presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Output  login parameters presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Check dimmerlightbulb presentation</string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <properties fieldset="false" bullet="false" position="row"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P34_Oven_getTemperatureRange" hidden="false">
+                <activator id="P34_Invoke_Oven_getTemperatureRange" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P34 Invoke Oven getTemperatureRange</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P34_Output__Oven_getTemperatureRange_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P34 Output  Oven getTemperatureRange parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P34_Oven_setTemperature" hidden="false">
+                <text_edit id="P34_Enter_Oven_setTemperature_temperature" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P34 Enter Oven setTemperature temperature</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <activator id="P34_Invoke_Oven_setTemperature" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P34 Invoke Oven setTemperature</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P34_Output__Oven_setTemperature_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P34 Output  Oven setTemperature parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P34_Oven_getTemperature" hidden="false">
+                <activator id="P34_Invoke_Oven_getTemperature" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P34 Invoke Oven getTemperature</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P34_Output__Oven_getTemperature_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P34 Output  Oven getTemperature parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P34_Oven_isOn" hidden="false">
+                <activator id="P34_Invoke_Oven_isOn" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P34 Invoke Oven isOn</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P34_Output__Oven_isOn_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P34 Output  Oven isOn parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P34_Oven_turnOn" hidden="false">
+                <text_edit id="P34_Enter_Oven_turnOn_on" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P34 Enter Oven turnOn on</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <activator id="P34_Invoke_Oven_turnOn" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P34 Invoke Oven turnOn</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P34_Output__Oven_turnOn_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P34 Output  Oven turnOn parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <properties fieldset="true" bullet="false" position="column"/>
+        </grouping>
+        <presentation_settings>
+            <title>Invoke_Oven_getTemperatureRange_presentation</title>
+            <background>
+                <background_color></background_color>
+                <background_image></background_image>
+            </background>
+            <font_settings mark="false"/>
+        </presentation_settings>
+    </presentation>
+    <presentation name="Enter_WashingMachine_turnOn_on_presentation">
+        <connections>
+            <elementary_conn interactor_id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" presentation_name="Check_dimmerlightbulb_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" presentation_name="Output__login_parameters_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" presentation_name="Enter_login_UserName_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P47_HomeScenarioWSversion2Service" hidden="false">
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Enter_WashingMachine_turnOn_on_presentation_header" hidden="false">
+                <properties fieldset="false" bullet="false" position="column">
+                    <label label_position="left">
+                        <text role="heading1" margin-top="0px" margin-bottom="0px" margin-left="0px;" margin-right="0px;" border-color="#000000" border="2px" border-style="solid">
+                            <string>Enter WashingMachine turnOn on presentation</string>
+                            <font_settings name="arial" color="#FFFFFF" size="28pt" align="center" mark="false"/>
+                        </text>
+                    </label>
+                    <background>
+                        <background_color>#32639A</background_color>
+                    </background>
+                </properties>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Enter_WashingMachine_turnOn_on_presentation_header_breadcrumb" hidden="false">
+                <navigator id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Enter login UserName presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Output  login parameters presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Check dimmerlightbulb presentation</string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <properties fieldset="false" bullet="false" position="row"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P47_WashingMachine_turnOn" hidden="false">
+                <text_edit id="P47_Enter_WashingMachine_turnOn_on" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P47 Enter WashingMachine turnOn on</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <activator id="P47_Invoke_WashingMachine_turnOn" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P47 Invoke WashingMachine turnOn</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P47_Output__WashingMachine_turnOn_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P47 Output  WashingMachine turnOn parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P47_WashingMachine_getCycle" hidden="false">
+                <activator id="P47_Invoke_WashingMachine_getCycle" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P47 Invoke WashingMachine getCycle</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P47_Output__WashingMachine_getCycle_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P47 Output  WashingMachine getCycle parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P47_WashingMachine_isOn" hidden="false">
+                <activator id="P47_Invoke_WashingMachine_isOn" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P47 Invoke WashingMachine isOn</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P47_Output__WashingMachine_isOn_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P47 Output  WashingMachine isOn parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P47_WashingMachine_setCycle" hidden="false">
+                <text_edit id="P47_Enter_WashingMachine_setCycle_cycle" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P47 Enter WashingMachine setCycle cycle</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <activator id="P47_Invoke_WashingMachine_setCycle" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P47 Invoke WashingMachine setCycle</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P47_Output__WashingMachine_setCycle_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P47 Output  WashingMachine setCycle parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <properties fieldset="true" bullet="false" position="column"/>
+        </grouping>
+        <presentation_settings>
+            <title>Enter_WashingMachine_turnOn_on_presentation</title>
+            <background>
+                <background_color></background_color>
+                <background_image></background_image>
+            </background>
+            <font_settings mark="false"/>
+        </presentation_settings>
+    </presentation>
+    <presentation name="Enter_Lightbulb_turnOn_on_presentation">
+        <connections>
+            <elementary_conn interactor_id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" presentation_name="Check_dimmerlightbulb_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" presentation_name="Output__login_parameters_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" presentation_name="Enter_login_UserName_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P58_HomeScenarioWSversion2Service" hidden="false">
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Enter_Lightbulb_turnOn_on_presentation_header" hidden="false">
+                <properties fieldset="false" bullet="false" position="column">
+                    <label label_position="left">
+                        <text role="heading1" margin-top="0px" margin-bottom="0px" margin-left="0px;" margin-right="0px;" border-color="#000000" border="2px" border-style="solid">
+                            <string>Enter Lightbulb turnOn on presentation</string>
+                            <font_settings name="arial" color="#FFFFFF" size="28pt" align="center" mark="false"/>
+                        </text>
+                    </label>
+                    <background>
+                        <background_color>#32639A</background_color>
+                    </background>
+                </properties>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Enter_Lightbulb_turnOn_on_presentation_header_breadcrumb" hidden="false">
+                <navigator id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Enter login UserName presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Output  login parameters presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Check dimmerlightbulb presentation</string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <properties fieldset="false" bullet="false" position="row"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P58_Lightbulb_turnOn" hidden="false">
+                <text_edit id="P58_Enter_Lightbulb_turnOn_on" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P58 Enter Lightbulb turnOn on</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <activator id="P58_Invoke_Lightbulb_turnOn" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P58 Invoke Lightbulb turnOn</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P58_Output__Lightbulb_turnOn_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P58 Output  Lightbulb turnOn parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P58_Lightbulb_isOn" hidden="false">
+                <activator id="P58_Invoke_Lightbulb_isOn" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P58 Invoke Lightbulb isOn</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P58_Output__Lightbulb_isOn_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P58 Output  Lightbulb isOn parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <properties fieldset="true" bullet="false" position="column"/>
+        </grouping>
+        <presentation_settings>
+            <title>Enter_Lightbulb_turnOn_on_presentation</title>
+            <background>
+                <background_color></background_color>
+                <background_image></background_image>
+            </background>
+            <font_settings mark="false"/>
+        </presentation_settings>
+    </presentation>
+    <presentation name="Invoke_Alarm_getState_presentation">
+        <connections>
+            <elementary_conn interactor_id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" presentation_name="Check_dimmerlightbulb_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" presentation_name="Output__login_parameters_presentation" external="false" anchor="false"/>
+            <elementary_conn interactor_id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" presentation_name="Enter_login_UserName_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P67_HomeScenarioWSversion2Service" hidden="false">
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Invoke_Alarm_getState_presentation_header" hidden="false">
+                <properties fieldset="false" bullet="false" position="column">
+                    <label label_position="left">
+                        <text role="heading1" margin-top="0px" margin-bottom="0px" margin-left="0px;" margin-right="0px;" border-color="#000000" border="2px" border-style="solid">
+                            <string>Invoke Alarm getState presentation</string>
+                            <font_settings name="arial" color="#FFFFFF" size="28pt" align="center" mark="false"/>
+                        </text>
+                    </label>
+                    <background>
+                        <background_color>#32639A</background_color>
+                    </background>
+                </properties>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="Invoke_Alarm_getState_presentation_header_breadcrumb" hidden="false">
+                <navigator id="_breadcrumb_Enter_login_UserName_presentation2Enter_login_UserName_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Enter login UserName presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Output__login_parameters_presentation2Output__login_parameters_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Output  login parameters presentation  &gt;&gt; </string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <navigator id="_breadcrumb_Check_dimmerlightbulb_presentation2Check_dimmerlightbulb_presentation" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <link>
+                        <label label_position="left">
+                            <text>
+<string>Check dimmerlightbulb presentation</string>
+                            </text>
+                        </label>
+                    </link>
+                </navigator>
+                <properties fieldset="false" bullet="false" position="row"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P67_Alarm_getState" hidden="false">
+                <activator id="P67_Invoke_Alarm_getState" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P67 Invoke Alarm getState</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P67_Output__Alarm_getState_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P67 Output  Alarm getState parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="P67_Alarm_setState" hidden="false">
+                <text_edit id="P67_Enter_Alarm_setState_state" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text_field length="20" password="false" border-color="#000000" border="1px" border-style="solid" width="400px">
+                        <label label_position="left">
+                            <text width="300px">
+<string>P67 Enter Alarm setState state</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </text_field>
+                </text_edit>
+                <activator id="P67_Invoke_Alarm_setState" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                        <label label_position="left">
+                            <text>
+<string>P67 Invoke Alarm setState</string>
+<font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="P67_Output__Alarm_setState_parameters" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <label label_position="left">
+                            <text>
+<string>P67 Output  Alarm setState parameters</string>
+<font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold" mark="false"/>
+                            </text>
+                        </label>
+                        <string></string>
+                    </text>
+                </description>
+                <properties fieldset="true" bullet="false" position="column"/>
+            </grouping>
+            <properties fieldset="true" bullet="false" position="column"/>
+        </grouping>
+        <presentation_settings>
+            <title>Invoke_Alarm_getState_presentation</title>
+            <background>
+                <background_color></background_color>
+                <background_image></background_image>
+            </background>
+            <font_settings mark="false"/>
+        </presentation_settings>
+    </presentation>
+</interface>

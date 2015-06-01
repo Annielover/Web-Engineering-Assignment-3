@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindingList xmlns="http://binding.ws.maria">
+    <binding task="Execute login" operation="login" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="Enter login UserName" operationElement="input/parameters/UserName"/>
+        <parameter task="Enter login Password" operationElement="input/parameters/Password"/>
+        <parameter task="Enter login_parameters" operationElement="input/parameters"/>
+        <return task="Output  login parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute getDeviceList" operation="getDeviceList" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <return task="pick from device" operationElement="output/parameters/out/id" conditional="false"/>
+        <return task="Output  getDeviceList parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Dimmerlightbulb_getRange" operation="Dimmerlightbulb_getRange" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/lightbulb"/>
+        <return task="Output  Dimmerlightbulb_getRange parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Thermostat_isOn" operation="Thermostat_isOn" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/thermostat"/>
+        <return task="Output  Thermostat_isOn parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Oven_getTemperatureRange" operation="Oven_getTemperatureRange" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/oven"/>
+        <return task="Output  Oven_getTemperatureRange parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute WashingMachine_turnOn" operation="WashingMachine_turnOn" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/washingmachine"/>
+        <parameter task="Enter WashingMachine_turnOn on" operationElement="input/parameters/on"/>
+        <parameter task="Enter WashingMachine_turnOn_parameters" operationElement="input/parameters"/>
+        <return task="Output  WashingMachine_turnOn parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Thermostat_getTemperature" operation="Thermostat_getTemperature" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/thermostat"/>
+        <return task="Output  Thermostat_getTemperature parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Lightbulb_turnOn" operation="Lightbulb_turnOn" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/lightbulb"/>
+        <parameter task="Enter Lightbulb_turnOn on" operationElement="input/parameters/on"/>
+        <parameter task="Enter Lightbulb_turnOn_parameters" operationElement="input/parameters"/>
+        <return task="Output  Lightbulb_turnOn parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Dimmerlightbulb_getDimmer" operation="Dimmerlightbulb_getDimmer" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/lightbulb"/>
+        <return task="Output  Dimmerlightbulb_getDimmer parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute WashingMachine_getCycle" operation="WashingMachine_getCycle" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/washingmachine"/>
+        <return task="Output  WashingMachine_getCycle parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Oven_setTemperature" operation="Oven_setTemperature" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/oven"/>
+        <parameter task="Enter Oven_setTemperature temperature" operationElement="input/parameters/temperature"/>
+        <parameter task="Enter Oven_setTemperature_parameters" operationElement="input/parameters"/>
+        <return task="Output  Oven_setTemperature parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Thermostat_turnOn" operation="Thermostat_turnOn" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/thermostat"/>
+        <parameter task="Enter Thermostat_turnOn on" operationElement="input/parameters/on"/>
+        <parameter task="Enter Thermostat_turnOn_parameters" operationElement="input/parameters"/>
+        <return task="Output  Thermostat_turnOn parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Lightbulb_isOn" operation="Lightbulb_isOn" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/lightbulb"/>
+        <return task="Output  Lightbulb_isOn parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Sensor_getStatus" operation="Sensor_getStatus" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/sensor"/>
+        <return task="Output  Sensor_getStatus parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Alarm_getState" operation="Alarm_getState" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/alarm"/>
+        <return task="Output  Alarm_getState parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute WashingMachine_isOn" operation="WashingMachine_isOn" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/washingmachine"/>
+        <return task="Output  WashingMachine_isOn parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Oven_getTemperature" operation="Oven_getTemperature" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/oven"/>
+        <return task="Output  Oven_getTemperature parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Dimmerlightbulb_setDimmer" operation="Dimmerlightbulb_setDimmer" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/lightbulb"/>
+        <parameter task="Enter Dimmerlightbulb_setDimmer dimmerValue" operationElement="input/parameters/dimmerValue"/>
+        <parameter task="Enter Dimmerlightbulb_setDimmer_parameters" operationElement="input/parameters"/>
+        <return task="Output  Dimmerlightbulb_setDimmer parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Thermostat_setTemperature" operation="Thermostat_setTemperature" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/thermostat"/>
+        <parameter task="Enter Thermostat_setTemperature temperature" operationElement="input/parameters/temperature"/>
+        <parameter task="Enter Thermostat_setTemperature_parameters" operationElement="input/parameters"/>
+        <return task="Output  Thermostat_setTemperature parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Oven_isOn" operation="Oven_isOn" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/oven"/>
+        <return task="Output  Oven_isOn parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Alarm_setState" operation="Alarm_setState" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/alarm"/>
+        <parameter task="Enter Alarm_setState state" operationElement="input/parameters/state"/>
+        <parameter task="Enter Alarm_setState_parameters" operationElement="input/parameters"/>
+        <return task="Output  Alarm_setState parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Dimmerlightbulb_turnOn" operation="Dimmerlightbulb_turnOn" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/lightbulb"/>
+        <parameter task="Enter Dimmerlightbulb_turnOn on" operationElement="input/parameters/on"/>
+        <parameter task="Enter Dimmerlightbulb_turnOn_parameters" operationElement="input/parameters"/>
+        <return task="Output  Dimmerlightbulb_turnOn parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Dimmerlightbulb_isOn" operation="Dimmerlightbulb_isOn" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/dimmerlight"/>
+        <return task="Output  Dimmerlightbulb_isOn parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute Oven_turnOn" operation="Oven_turnOn" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/oven"/>
+        <parameter task="Enter Oven_turnOn on" operationElement="input/parameters/on"/>
+        <parameter task="Enter Oven_turnOn_parameters" operationElement="input/parameters"/>
+        <return task="Output  Oven_turnOn parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+    <binding task="Execute WashingMachine_setCycle" operation="WashingMachine_setCycle" operationGroup="HomeScenarioWSversion2" namespace="http://ws.hiis.isti.cnr.it/" service="HomeScenarioWSversion2Service">
+        <parameter task="pick from device" operationElement="input/parameters/washingmachine"/>
+        <parameter task="Enter WashingMachine_setCycle cycle" operationElement="input/parameters/cycle"/>
+        <parameter task="Enter WashingMachine_setCycle_parameters" operationElement="input/parameters"/>
+        <return task="Output  WashingMachine_setCycle parameters" operationElement="output/parameters/out" conditional="false"/>
+    </binding>
+</bindingList>

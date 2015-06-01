@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:AnnotationModel xmlns:ns2="http://servface.org/servfaceannotationmodel-1.2" xmlns:ns3="http://servface.org/servfaceannotationmodel-1.2/annotations" xmlns:ns4="http://servface.org/servfaceannotationmodel-1.2/annotations/extensions" baseDescriptionFileURI="http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL"/>

@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://giove.isti.cnr.it" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns3="uri:xs" xmlns:ns4="http://schemas.xmlsoap.org/wsdl/" type="cui-multimodal-desktop" schema-version="1.4.6">
+    <presentation name="Login page">
+        <connections>
+            <elementary_conn interactor_id="submit_button" presentation_name="Room selection" external="false" anchor="false"/>
+        </connections>
+        <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="container" hidden="false" margin-top="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="header" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <description output="graphical_assignment" id="titleImage" enabled="false" hidden="false" continuous_update="false">
+                    <image source="http://giove.isti.cnr.it/users/manca/img/domo/logo.png" alt="logo" horizontal_align="left" vertical_align="middle" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none"/>
+                </description>
+                <description output="redundancy" id="titleText" enabled="false" hidden="false" continuous_update="false">
+                    <text>
+                        <string>Interactive Home</string>
+                        <font_settings name="arial" color="white" size="30pt" align="left" style="italic" decoration="none"/>
+                    </text>
+                    <vocal_output>
+                        <speech counter="1" timeout="20">
+                            <content>Interactive Home</content>
+                        </speech>
+                    </vocal_output>
+                </description>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background>
+                        <background_color>#004466</background_color>
+                    </background>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="body" hidden="false" margin-top="20px" margin-bottom="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <relation askConfirmation="false" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset" id="login_form" hidden="false">
+                    <grouping output="redundancy" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="login_form" hidden="false" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+                        <text_edit input="equivalence" prompt="redundancy" feedback="redundancy" id="username" enabled="false" focus="false" hidden="false" continuous_update="false">
+                            <text_field length="0" password="false" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+<label label_position="top">
+    <text>
+        <string>Username [admin]:</string>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </text>
+</label>
+                            </text_field>
+                            <vocal_textual_input askConfirmation="true">
+<request counter="1" timeout="5">
+    <content>Insert your username</content>
+</request>
+<request counter="2" timeout="20">
+    <content>Please insert your username, for help contact the site administrator</content>
+</request>
+<vocal_feedback counter="1" timeout="20">
+    <content>You user name is</content>
+</vocal_feedback>
+<grammar>
+    <internal_grammar>
+        <grammar_option grammar_option="Marco"/>
+        <grammar_option grammar_option="Fabio"/>
+        <grammar_option grammar_option="admin"/>
+    </internal_grammar>
+</grammar>
+<events>
+    <noinput message="No input message" reprompt="true"/>
+</events>
+                            </vocal_textual_input>
+                        </text_edit>
+                        <text_edit input="equivalence" prompt="redundancy" feedback="graphical_assignment" id="psw" enabled="false" focus="false" hidden="false" continuous_update="false">
+                            <text_field length="0" password="true" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+<label label_position="top">
+    <text>
+        <string>Password [admin]:</string>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </text>
+</label>
+                            </text_field>
+                            <vocal_textual_input>
+<request counter="1" timeout="20">
+    <content>Insert your password</content>
+</request>
+<request counter="2" timeout="20">
+    <content>Please insert your password, for help contact the site administrator</content>
+</request>
+<grammar>
+    <internal_grammar>
+        <grammar_option grammar_option="Marco"/>
+        <grammar_option grammar_option="Fabio"/>
+        <grammar_option grammar_option="admin"/>
+    </internal_grammar>
+</grammar>
+<events>
+    <noinput message="No input" reprompt="true"/>
+</events>
+                            </vocal_textual_input>
+                        </text_edit>
+                        <vocal_output>
+                            <insert_keyword counter="0" timeout="0">
+<content>Login form</content>
+<synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+    <bargein active="false" type="speech"/>
+</synthesis_properties>
+                            </insert_keyword>
+                        </vocal_output>
+                        <properties fieldset="true" bullet="false">
+                            <hierarchy_properties/>
+                            <ordering_properties visualization="bullet"/>
+                            <background>
+<background_color>#fbef99</background_color>
+                            </background>
+                            <font_settings name="arial" align="left" decoration="none"/>
+                        </properties>
+                    </grouping>
+                    <second_expression>
+                        <activator input="vocal_assignment" prompt="redundancy" feedback="redundancy" id="submit_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                            <button border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+<label label_position="top">
+    <text>
+        <string>login</string>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </text>
+</label>
+                            </button>
+                            <vocal_activator>
+<submit>
+    <vocal_feedback counter="1" timeout="10">
+        <content>You have submit the form       </content>
+        <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+            <bargein active="false" type="speech"/>
+        </synthesis_properties>
+    </vocal_feedback>
+</submit>
+                            </vocal_activator>
+                        </activator>
+                    </second_expression>
+                </relation>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background/>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="footer" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <description output="graphical_assignment" id="titleText" enabled="false" hidden="false" continuous_update="false">
+                    <text>
+                        <string>Multimodal domotic application</string>
+                        <font_settings name="arial" color="white" size="30pt" align="left" style="italic" decoration="none"/>
+                    </text>
+                </description>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background>
+                        <background_color>#004466</background_color>
+                    </background>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <properties fieldset="false" bullet="false">
+                <hierarchy_properties/>
+                <ordering_properties visualization="bullet"/>
+                <background/>
+                <font_settings name="arial" align="left" decoration="none"/>
+            </properties>
+        </grouping>
+        <presentation_settings>
+            <background/>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </presentation_settings>
+    </presentation>
+    <presentation name="Room selection">
+        <connections>
+            <elementary_conn interactor_id="Entrance_imageLink" presentation_name="Livingroom" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Bedroom_imageLink" presentation_name="Livingroom" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Kitchen_imageLink" presentation_name="Livingroom" external="false" anchor="false"/>
+            <elementary_conn interactor_id="LivingRoom_imageLink" presentation_name="Livingroom" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Bathroom_imageLink" presentation_name="Livingroom" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Disconnect_imageLink" presentation_name="Login page" external="false" anchor="false"/>
+        </connections>
+        <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="container" hidden="false" margin-top="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="header" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <description output="graphical_assignment" id="titleImage" enabled="false" hidden="false" continuous_update="false">
+                    <image source="http://giove.isti.cnr.it/users/manca/img/domo/logo.png" alt="logo" horizontal_align="left" vertical_align="middle" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none"/>
+                </description>
+                <description output="redundancy" id="titleText" enabled="false" hidden="false" continuous_update="false">
+                    <text>
+                        <string>Interactive Home</string>
+                        <font_settings name="arial" color="white" size="30pt" align="left" style="italic" decoration="none"/>
+                    </text>
+                    <vocal_output>
+                        <speech counter="1" timeout="20">
+                            <content>Interactive Home</content>
+                        </speech>
+                    </vocal_output>
+                </description>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background>
+                        <background_color>#004466</background_color>
+                    </background>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="body" hidden="false" margin-top="20px" margin-bottom="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <grouping output="redundancy" feedback="redundancy" hierarchy="false" ordering="false" continuous_update="false" id="map_zone" hidden="false" margin-top="5px" margin-bottom="5px" margin-left="5px" margin-right="5px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                    <grid>
+                        <grid_row>
+                            <cell>
+<grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="grouping_table_1_1" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+    <navigator input="vocal_assignment" prompt="redundancy" feedback="redundancy" id="Entrance_imageLink" enabled="false" focus="false" hidden="false" continuous_update="false">
+        <image_link source="img/domo/Entrance.png" alt="Entrance" horizontal_align="left" vertical_align="middle" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" height="100" width="100"/>
+        <vocal_navigator message="entrance">
+            <prompt counter="1" timeout="20">
+                <content>Say entrance to go to the entrance room</content>
+            </prompt>
+        </vocal_navigator>
+    </navigator>
+    <properties fieldset="false" bullet="false">
+        <hierarchy_properties/>
+        <ordering_properties visualization="bullet"/>
+        <background>
+            <background_color>#D3D3D3</background_color>
+        </background>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </properties>
+</grouping>
+                            </cell>
+                            <cell>
+<grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="grouping_table_1_2" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+    <navigator input="vocal_assignment" prompt="redundancy" feedback="redundancy" id="Bedroom_imageLink" enabled="false" focus="false" hidden="false" continuous_update="false">
+        <image_link source="img/domo/Bedroom.png" alt="bedroom" horizontal_align="left" vertical_align="middle" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" height="100" width="100"/>
+        <vocal_navigator message="bedroom">
+            <prompt counter="1" timeout="20">
+                <content>Say bedroom to go to the bedroom</content>
+            </prompt>
+        </vocal_navigator>
+    </navigator>
+    <properties fieldset="false" bullet="false">
+        <hierarchy_properties/>
+        <ordering_properties visualization="bullet"/>
+        <background>
+            <background_color>#D3D3D3</background_color>
+        </background>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </properties>
+</grouping>
+                            </cell>
+                            <cell>
+<grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="grouping_table_1_3" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+    <navigator input="vocal_assignment" prompt="redundancy" feedback="redundancy" id="Kitchen_imageLink" enabled="false" focus="false" hidden="false" continuous_update="false">
+        <image_link source="img/domo/Kitchen.png" alt="kitchen" horizontal_align="left" vertical_align="middle" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" height="100" width="100"/>
+        <vocal_navigator message="kitchen">
+            <prompt counter="1" timeout="20">
+                <content>Say kitchen to go to the kitchen room</content>
+            </prompt>
+        </vocal_navigator>
+    </navigator>
+    <properties fieldset="false" bullet="false">
+        <hierarchy_properties/>
+        <ordering_properties visualization="bullet"/>
+        <background>
+            <background_color>#D3D3D3</background_color>
+        </background>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </properties>
+</grouping>
+                            </cell>
+                        </grid_row>
+                        <grid_row>
+                            <cell>
+<grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="grouping_table_2_1" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+    <navigator input="vocal_assignment" prompt="redundancy" feedback="redundancy" id="LivingRoom_imageLink" enabled="false" focus="false" hidden="false" continuous_update="false">
+        <image_link source="img/domo/LivingRoom.png" alt="living_room" horizontal_align="left" vertical_align="middle" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" height="100" width="100"/>
+        <vocal_navigator message="living">
+            <prompt counter="1" timeout="20">
+                <content>Say living to go to the living room</content>
+            </prompt>
+        </vocal_navigator>
+    </navigator>
+    <properties fieldset="false" bullet="false">
+        <hierarchy_properties/>
+        <ordering_properties visualization="bullet"/>
+        <background>
+            <background_color>#D3D3D3</background_color>
+        </background>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </properties>
+</grouping>
+                            </cell>
+                            <cell>
+<grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="grouping_table_2_2" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+    <navigator input="vocal_assignment" prompt="redundancy" feedback="redundancy" id="Bathroom_imageLink" enabled="false" focus="false" hidden="false" continuous_update="false">
+        <image_link source="img/domo/Bathroom.png" alt="bathroom" horizontal_align="left" vertical_align="middle" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" height="100" width="100"/>
+        <vocal_navigator message="bathroom">
+            <prompt counter="1" timeout="20">
+                <content>Say bathroom to go to the bathroom</content>
+            </prompt>
+        </vocal_navigator>
+    </navigator>
+    <properties fieldset="false" bullet="false">
+        <hierarchy_properties/>
+        <ordering_properties visualization="bullet"/>
+        <background>
+            <background_color>#D3D3D3</background_color>
+        </background>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </properties>
+</grouping>
+                            </cell>
+                            <cell>
+<grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="grouping_table_2_3" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+    <navigator input="vocal_assignment" prompt="redundancy" feedback="redundancy" id="Disconnect_imageLink" enabled="false" focus="false" hidden="false" continuous_update="false">
+        <image_link source="img/domo/Disconnect.png" alt="Entrance" horizontal_align="left" vertical_align="middle" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" height="100" width="100"/>
+        <vocal_navigator message="entrance">
+            <prompt counter="1" timeout="20">
+                <content>Say disconnect to disconnect</content>
+            </prompt>
+        </vocal_navigator>
+    </navigator>
+    <properties fieldset="false" bullet="false">
+        <hierarchy_properties/>
+        <ordering_properties visualization="bullet"/>
+        <background>
+            <background_color>#D3D3D3</background_color>
+        </background>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </properties>
+</grouping>
+                            </cell>
+                        </grid_row>
+                    </grid>
+                    <vocal_output>
+                        <insert_keyword counter="1" timeout="10">
+                            <content>Map zone start</content>
+                        </insert_keyword>
+                    </vocal_output>
+                    <vocal_feedback>
+                        <insert_keyword counter="1" timeout="10">
+                            <content>Map zone end</content>
+                            <synthesis_properties emphasis="moderate" pitch="medium" rate="medium" volume="medium" age="20" gender="male"/>
+                        </insert_keyword>
+                    </vocal_feedback>
+                    <properties fieldset="false" bullet="false">
+                        <hierarchy_properties/>
+                        <ordering_properties visualization="bullet"/>
+                        <background>
+                            <background_color>#ff0000</background_color>
+                        </background>
+                        <font_settings name="arial" align="left" decoration="none"/>
+                    </properties>
+                </grouping>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background/>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="footer" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <description output="graphical_assignment" id="titleText" enabled="false" hidden="false" continuous_update="false">
+                    <text>
+                        <string>Multimodal domotic application</string>
+                        <font_settings name="arial" color="white" size="30pt" align="left" style="italic" decoration="none"/>
+                    </text>
+                </description>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background>
+                        <background_color>#004466</background_color>
+                    </background>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <properties fieldset="false" bullet="false">
+                <hierarchy_properties/>
+                <ordering_properties visualization="bullet"/>
+                <background/>
+                <font_settings name="arial" align="left" decoration="none"/>
+            </properties>
+        </grouping>
+        <presentation_settings>
+            <background/>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </presentation_settings>
+        <default_settings>
+            <vocal_default_properties>
+                <synthesis_properties emphasis="moderate" pitch="medium" rate="medium" volume="medium" age="20" gender="female"/>
+            </vocal_default_properties>
+        </default_settings>
+    </presentation>
+    <presentation name="Livingroom">
+        <connections>
+            <elementary_conn interactor_id="submit_button" presentation_name="MediaPlayerPage" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Entrance_button" presentation_name="Entrance" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Bedroom_button" presentation_name="Bedroom" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Kitchen_button" presentation_name="Kitchen" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Living_button" presentation_name="Livingroom" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Bathroom_button" presentation_name="Bathroom" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Disconnect_button" presentation_name="Disconnect" external="false" anchor="false"/>
+        </connections>
+        <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="container" hidden="false" margin-top="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="header" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <description output="graphical_assignment" id="titleImage" enabled="false" hidden="false" continuous_update="false">
+                    <image source="http://giove.isti.cnr.it/users/manca/img/domo/logo.png" alt="living_room" horizontal_align="left" vertical_align="middle" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none"/>
+                </description>
+                <description output="redundancy" id="titleText" enabled="false" hidden="false" continuous_update="false">
+                    <text>
+                        <string>Livingroom</string>
+                        <font_settings name="arial" color="white" size="30pt" align="left" style="italic" decoration="none"/>
+                    </text>
+                    <vocal_output>
+                        <speech counter="1" timeout="20">
+                            <content>Livingroom page</content>
+                        </speech>
+                    </vocal_output>
+                </description>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background>
+                        <background_color>#004466</background_color>
+                    </background>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="body" hidden="false" margin-top="20px" margin-bottom="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="monitored_devices" hidden="false" margin-top="5px" margin-bottom="5px" margin-left="5px" margin-right="5px" float="left" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                    <description output="complementarity" enabled="false" hidden="false" continuous_update="false">
+                        <table end_header_breaktime="2" end_datacell_breaktime="1" end_row_breaktime="3" align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+                            <head align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+<cell output="redundancy" vertical_align="middle" horizontal_align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+    <text>
+        <string>Device name</string>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </text>
+    <vocal_cell>
+        <speech counter="0" timeout="0">
+            <content>device name</content>
+            <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+                <bargein active="false" type="speech"/>
+            </synthesis_properties>
+        </speech>
+    </vocal_cell>
+</cell>
+<cell output="redundancy" vertical_align="middle" horizontal_align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+    <text>
+        <string>state</string>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </text>
+    <vocal_cell>
+        <speech counter="0" timeout="0">
+            <content>state</content>
+            <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+                <bargein active="false" type="speech"/>
+            </synthesis_properties>
+        </speech>
+    </vocal_cell>
+</cell>
+<cell output="redundancy" vertical_align="middle" horizontal_align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+    <text>
+        <string>Details</string>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </text>
+    <vocal_cell>
+        <speech counter="0" timeout="0">
+            <content>details</content>
+            <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+                <bargein active="false" type="speech"/>
+            </synthesis_properties>
+        </speech>
+    </vocal_cell>
+</cell>
+                            </head>
+                            <body>
+<row align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+    <cell output="redundancy" vertical_align="middle" horizontal_align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+        <text>
+            <string>Air conditioned</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+        <vocal_cell>
+            <speech counter="0" timeout="0">
+                <content>air conditioned</content>
+                <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+                    <bargein active="false" type="speech"/>
+                </synthesis_properties>
+            </speech>
+        </vocal_cell>
+    </cell>
+    <cell output="redundancy" vertical_align="middle" horizontal_align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+        <text>
+            <string>ON</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+        <vocal_cell>
+            <speech counter="0" timeout="0">
+                <content>on</content>
+                <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+                    <bargein active="false" type="speech"/>
+                </synthesis_properties>
+            </speech>
+        </vocal_cell>
+    </cell>
+    <cell output="redundancy" vertical_align="middle" horizontal_align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+        <text>
+            <string>20°</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+        <vocal_cell>
+            <speech counter="0" timeout="0">
+                <content>20 degrees</content>
+                <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+                    <bargein active="false" type="speech"/>
+                </synthesis_properties>
+            </speech>
+        </vocal_cell>
+    </cell>
+</row>
+<row align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+    <cell output="redundancy" vertical_align="middle" horizontal_align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+        <text>
+            <string>Media player</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+        <vocal_cell>
+            <speech counter="0" timeout="0">
+                <content>media player</content>
+                <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+                    <bargein active="false" type="speech"/>
+                </synthesis_properties>
+            </speech>
+        </vocal_cell>
+    </cell>
+    <cell output="redundancy" vertical_align="middle" horizontal_align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+        <text>
+            <string>ON</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+        <vocal_cell>
+            <speech counter="0" timeout="0">
+                <content>on</content>
+                <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+                    <bargein active="false" type="speech"/>
+                </synthesis_properties>
+            </speech>
+        </vocal_cell>
+    </cell>
+    <cell output="redundancy" vertical_align="middle" horizontal_align="left" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+        <text>
+            <string>Playing Album Litfiba 3</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+        <vocal_cell>
+            <speech counter="0" timeout="0">
+                <content>playing album litfiba 3</content>
+                <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+                    <bargein active="false" type="speech"/>
+                </synthesis_properties>
+            </speech>
+        </vocal_cell>
+    </cell>
+</row>
+                            </body>
+                        </table>
+                        <vocal_output>
+                            <speech counter="1" timeout="20">
+<content>Monitored devices</content>
+<synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+    <bargein active="false" type="speech"/>
+</synthesis_properties>
+                            </speech>
+                        </vocal_output>
+                    </description>
+                    <properties fieldset="false" bullet="false">
+                        <hierarchy_properties/>
+                        <ordering_properties visualization="bullet"/>
+                        <background>
+                            <background_color>#fbef99</background_color>
+                        </background>
+                        <font_settings name="arial" align="left" decoration="none"/>
+                    </properties>
+                </grouping>
+                <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="devices_list" hidden="false" margin-top="5px" margin-bottom="5px" margin-left="20px" margin-right="5px" float="left" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                    <relation askConfirmation="false" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset" id="device_form" hidden="false">
+                        <single_choice input="equivalence" prompt="redundancy" feedback="redundancy" cardinality="0" id="devices_id" enabled="false" focus="false" hidden="false" continuous_update="false">
+                            <choice_element vocal_selection="air conditioned" value="air conditioned" generic_element_alias="air conditioned">
+<label label_position="top">
+    <text>
+        <string>air conditioned</string>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </text>
+</label>
+                            </choice_element>
+                            <choice_element vocal_selection="media player" value="media player" generic_element_alias="media player">
+<label label_position="top">
+    <text>
+        <string>media player</string>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </text>
+</label>
+                            </choice_element>
+                            <drop_down_list border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+<label label_position="top">
+    <text>
+        <string>Devices:</string>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </text>
+</label>
+                            </drop_down_list>
+                            <single_vocal_selection askConfirmation="true">
+<question counter="1" timeout="10">
+    <content>Select the devices you want to monitor</content>
+    <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="default" timeout="0">
+        <bargein active="false" type="speech"/>
+    </synthesis_properties>
+</question>
+<question counter="2" timeout="20">
+    <content>Select the devices you want to monitor, try to say media player</content>
+    <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="default" timeout="0">
+        <bargein active="false" type="speech"/>
+    </synthesis_properties>
+</question>
+<vocal_feedback counter="1" timeout="20">
+    <content>You choose the device</content>
+</vocal_feedback>
+<events>
+    <noinput message="No input" reprompt="true"/>
+    <nomatch message="Input no match" reprompt="true"/>
+</events>
+                            </single_vocal_selection>
+                        </single_choice>
+                        <second_expression>
+                            <activator input="vocal_assignment" prompt="redundancy" feedback="redundancy" id="submit_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+<button border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+    <label label_position="top">
+        <text>
+            <string>submit</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</button>
+<vocal_activator>
+    <submit>
+        <vocal_feedback counter="1" timeout="20">
+            <content>You have submited the form</content>
+            <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+                <bargein active="false" type="speech"/>
+            </synthesis_properties>
+        </vocal_feedback>
+    </submit>
+</vocal_activator>
+                            </activator>
+                        </second_expression>
+                    </relation>
+                    <properties fieldset="false" bullet="false">
+                        <hierarchy_properties/>
+                        <ordering_properties visualization="bullet"/>
+                        <background>
+                            <background_color>#fbef99</background_color>
+                        </background>
+                        <font_settings name="arial" align="left" decoration="none"/>
+                    </properties>
+                </grouping>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background/>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="footer" hidden="false" position="column" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" height="30px">
+                <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="navigator_div" hidden="false" padding-top="5px" padding-bottom="5px" padding-left="5px" padding-right="5px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Entrance_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>Entrance</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="entrance"/>
+                    </navigator>
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Bedroom_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>Bedroom</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="bedroom"/>
+                    </navigator>
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Kitchen_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>Kitchen</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="kitchen"/>
+                    </navigator>
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Living_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>LivingRoom</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="livingroom"/>
+                    </navigator>
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Bathroom_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>Bathroom</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="bathroom"/>
+                    </navigator>
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Disconnect_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>Disconnect</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="disconnect"/>
+                    </navigator>
+                    <properties fieldset="false" bullet="false">
+                        <hierarchy_properties/>
+                        <ordering_properties visualization="bullet"/>
+                        <background/>
+                        <font_settings name="arial" align="left" decoration="none"/>
+                    </properties>
+                </grouping>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background>
+                        <background_color>#004466</background_color>
+                    </background>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <properties fieldset="false" bullet="false">
+                <hierarchy_properties/>
+                <ordering_properties visualization="bullet"/>
+                <background/>
+                <font_settings name="arial" align="left" decoration="none"/>
+            </properties>
+        </grouping>
+        <presentation_settings>
+            <background/>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </presentation_settings>
+    </presentation>
+    <presentation name="MediaPlayerPage">
+        <connections>
+            <elementary_conn interactor_id="submit_button" presentation_name="MonitorDevice" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Entrance_button" presentation_name="Entrance" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Bedroom_button" presentation_name="Bedroom" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Kitchen_button" presentation_name="Kitchen" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Living_button" presentation_name="LivingRoom" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Bathroom_button" presentation_name="Bathroom" external="false" anchor="false"/>
+            <elementary_conn interactor_id="Disconnect_button" presentation_name="Disconnect" external="false" anchor="false"/>
+            <elementary_conn interactor_id="submit_button" presentation_name="Room selection" external="false" anchor="false"/>
+        </connections>
+        <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="container" hidden="false" margin-top="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="header" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <description output="graphical_assignment" id="titleImage" enabled="false" hidden="false" continuous_update="false">
+                    <image source="http://giove.isti.cnr.it/users/manca/img/domo/logo.png" alt="living_room" horizontal_align="left" vertical_align="middle" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none"/>
+                </description>
+                <description output="redundancy" id="titleText" enabled="false" hidden="false" continuous_update="false">
+                    <text>
+                        <string>Living room -&gt; Media Player</string>
+                        <font_settings name="arial" color="white" size="30pt" align="left" style="italic" decoration="none"/>
+                    </text>
+                    <vocal_output>
+                        <speech counter="1" timeout="20">
+                            <content>Media Player</content>
+                        </speech>
+                    </vocal_output>
+                </description>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background>
+                        <background_color>#004466</background_color>
+                    </background>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="body" hidden="false" margin-top="20px" margin-bottom="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <relation askConfirmation="true" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" id="relation_id" hidden="false">
+                    <grouping output="redundancy" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="set_device" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                        <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="single_grouping" hidden="false" margin-top="20px" margin-bottom="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" width="300px">
+                            <single_choice input="equivalence" prompt="redundancy" feedback="redundancy" cardinality="0" id="playlist" enabled="false" focus="false" hidden="false" continuous_update="false">
+<choice_element vocal_selection="litfiba" value="litfiba" generic_element_alias="litfiba">
+    <label label_position="top">
+        <text>
+            <string>Litfiba</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</choice_element>
+<choice_element vocal_selection="korn" value="korn" generic_element_alias="korn">
+    <label label_position="top">
+        <text>
+            <string>korn</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</choice_element>
+<choice_element vocal_selection="pearl jam" value="pearl jam" generic_element_alias="pearl jam">
+    <label label_position="top">
+        <text>
+            <string>pearl jam</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</choice_element>
+<drop_down_list border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+    <label label_position="top">
+        <text>
+            <string>Select the playlist:</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</drop_down_list>
+<single_vocal_selection askConfirmation="true">
+    <question counter="1" timeout="10">
+        <content>Select the playlist</content>
+        <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+            <bargein active="false" type="speech"/>
+        </synthesis_properties>
+    </question>
+    <question counter="2" timeout="20">
+        <content>Select the playlist, try to say pearl jam</content>
+        <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="default" timeout="0">
+            <bargein active="false" type="speech"/>
+        </synthesis_properties>
+    </question>
+    <vocal_feedback counter="1" timeout="20">
+        <content>You have select the playlist</content>
+        <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+            <bargein active="false" type="speech"/>
+        </synthesis_properties>
+    </vocal_feedback>
+</single_vocal_selection>
+                            </single_choice>
+                            <properties fieldset="false" bullet="false">
+<hierarchy_properties/>
+<ordering_properties visualization="bullet"/>
+<background>
+    <background_color>#fbef99</background_color>
+</background>
+<font_settings name="arial" align="left" decoration="none"/>
+                            </properties>
+                        </grouping>
+                        <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="multiple_grouping" hidden="false" margin-top="20px" margin-bottom="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" width="300px">
+                            <multiple_choice input="equivalence" prompt="redundancy" feedback="redundancy" cardinality="0" id="settings" enabled="false" focus="false" hidden="false" continuous_update="false">
+<choice_element vocal_selection="shuffle" value="shuffle" generic_element_alias="shuffle">
+    <label label_position="top">
+        <text>
+            <string>shuffle</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</choice_element>
+<choice_element vocal_selection="repeat" value="repeat" generic_element_alias="repeat">
+    <label label_position="top">
+        <text>
+            <string>repeat</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</choice_element>
+<check_box border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+    <label label_position="top">
+        <text>
+            <string>Play list settings:</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</check_box>
+<multiple_vocal_selection askConfirmation="true">
+    <question counter="1" timeout="20">
+        <content>playlist settings</content>
+        <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+            <bargein active="false" type="speech"/>
+        </synthesis_properties>
+    </question>
+    <vocal_feedback counter="1" timeout="20">
+        <content>You selected</content>
+        <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+            <bargein active="false" type="speech"/>
+        </synthesis_properties>
+    </vocal_feedback>
+</multiple_vocal_selection>
+                            </multiple_choice>
+                            <properties fieldset="false" bullet="false">
+<hierarchy_properties/>
+<ordering_properties visualization="bullet"/>
+<background>
+    <background_color>#fbef99</background_color>
+</background>
+<font_settings name="arial" align="left" decoration="none"/>
+                            </properties>
+                        </grouping>
+                        <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="command_grouping" hidden="false" margin-top="20px" margin-bottom="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" width="300px">
+                            <single_choice input="equivalence" prompt="redundancy" feedback="redundancy" cardinality="0" id="action" enabled="false" focus="false" hidden="false" continuous_update="false">
+<choice_element vocal_selection="play" value="play">
+    <label label_position="top">
+        <text>
+            <string>play</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</choice_element>
+<choice_element vocal_selection="stop" value="stop" generic_element_alias="stop">
+    <label label_position="top">
+        <text>
+            <string>stop</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</choice_element>
+<radio_button alignment="horizontal" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+    <label label_position="top">
+        <text>
+            <string>Media player info</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</radio_button>
+<single_vocal_selection askConfirmation="true">
+    <question counter="1" timeout="20">
+        <content>Select the action</content>
+        <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+            <bargein active="false" type="speech"/>
+        </synthesis_properties>
+    </question>
+    <vocal_feedback counter="1" timeout="20">
+        <content>You selected</content>
+        <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+            <bargein active="false" type="speech"/>
+        </synthesis_properties>
+    </vocal_feedback>
+</single_vocal_selection>
+                            </single_choice>
+                            <properties fieldset="false" bullet="false">
+<hierarchy_properties/>
+<ordering_properties visualization="bullet"/>
+<background>
+    <background_color>#fbef99</background_color>
+</background>
+<font_settings name="arial" align="left" decoration="none"/>
+                            </properties>
+                        </grouping>
+                        <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="volume_grouping" hidden="false" margin-top="20px" margin-bottom="20px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" width="300px">
+                            <numerical_edit_in_range input="equivalence" prompt="redundancy" feedback="redundancy" min="0.0" max="10.0" continuous="yes" id="level" enabled="false" focus="false" hidden="false" continuous_update="false">
+<spin_box value="0" length="0" border-style="outset" border-top-style="outset" border-bottom-style="outset" border-left-style="outset" border-right-style="outset">
+    <label label_position="top">
+        <text>
+            <string>Volume level:</string>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </text>
+    </label>
+</spin_box>
+<vocal_numerical_input askConfirmation="true" built_in_grammar="number">
+    <request counter="1" timeout="20">
+        <content>Select the volume level</content>
+    </request>
+    <vocal_feedback counter="1" timeout="20">
+        <content>Volume level</content>
+    </vocal_feedback>
+</vocal_numerical_input>
+                            </numerical_edit_in_range>
+                            <properties fieldset="false" bullet="false">
+<hierarchy_properties/>
+<ordering_properties visualization="bullet"/>
+<background>
+    <background_color>#fbef99</background_color>
+</background>
+<font_settings name="arial" align="left" decoration="none"/>
+                            </properties>
+                        </grouping>
+                        <vocal_output>
+                            <insert_keyword counter="1" timeout="20">
+<content>Media player settings</content>
+<synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+    <bargein active="false" type="speech"/>
+</synthesis_properties>
+                            </insert_keyword>
+                        </vocal_output>
+                        <properties fieldset="false" bullet="false">
+                            <hierarchy_properties/>
+                            <ordering_properties visualization="bullet"/>
+                            <background/>
+                            <font_settings name="arial" align="left" decoration="none"/>
+                        </properties>
+                    </grouping>
+                    <second_expression>
+                        <activator input="equivalence" prompt="redundancy" feedback="redundancy" id="submit_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                            <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+<label label_position="top">
+    <text>
+        <string>submit</string>
+        <font_settings name="arial" align="left" decoration="none"/>
+    </text>
+</label>
+                            </button>
+                            <vocal_activator>
+<submit>
+    <vocal_feedback counter="1" timeout="20">
+        <content>You have submit the form</content>
+        <synthesis_properties emphasis="none" pitch="default" rate="default" volume="default" age="0" gender="male" timeout="0">
+            <bargein active="false" type="speech"/>
+        </synthesis_properties>
+    </vocal_feedback>
+</submit>
+                            </vocal_activator>
+                        </activator>
+                    </second_expression>
+                </relation>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background/>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="footer" hidden="false" position="column" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none" height="30px">
+                <grouping output="graphical_assignment" feedback="null" hierarchy="false" ordering="false" continuous_update="false" id="navigator_div" hidden="false" padding-top="5px" padding-bottom="5px" padding-left="5px" padding-right="5px" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Entrance_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>Entrance</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="entrance"/>
+                    </navigator>
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Bedroom_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>Bedroom</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="bedroom"/>
+                    </navigator>
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Kitchen_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>Kitchen</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="kitchen"/>
+                    </navigator>
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Living_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>LivingRoom</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="livingroom"/>
+                    </navigator>
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Bathroom_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>Bathroom</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="bathroom"/>
+                    </navigator>
+                    <navigator input="redundancy" prompt="graphical_assignment" feedback="graphical_assignment" id="Disconnect_button" enabled="false" focus="false" hidden="false" continuous_update="false">
+                        <button border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                            <label label_position="top">
+<text>
+    <string>Disconnect</string>
+    <font_settings name="arial" align="left" decoration="none"/>
+</text>
+                            </label>
+                        </button>
+                        <vocal_navigator message="disconnect"/>
+                    </navigator>
+                    <properties fieldset="false" bullet="false">
+                        <hierarchy_properties/>
+                        <ordering_properties visualization="bullet"/>
+                        <background/>
+                        <font_settings name="arial" align="left" decoration="none"/>
+                    </properties>
+                </grouping>
+                <properties fieldset="false" bullet="false">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="bullet"/>
+                    <background>
+                        <background_color>#004466</background_color>
+                    </background>
+                    <font_settings name="arial" align="left" decoration="none"/>
+                </properties>
+            </grouping>
+            <properties fieldset="false" bullet="false">
+                <hierarchy_properties/>
+                <ordering_properties visualization="bullet"/>
+                <background/>
+                <font_settings name="arial" align="left" decoration="none"/>
+            </properties>
+        </grouping>
+        <presentation_settings>
+            <background/>
+            <font_settings name="arial" align="left" decoration="none"/>
+        </presentation_settings>
+    </presentation>
+</interface>

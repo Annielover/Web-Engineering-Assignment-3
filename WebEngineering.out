@@ -1,0 +1,71 @@
+\BOOKMARK [0][-]{chapter*.3}{Preface}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Mission statement specification}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Mission statement}{chapter.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.1}{Purpose}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.2}{Target audience}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.3}{Subject}{section.1.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Audience modeling}{}% 7
+\BOOKMARK [1][-]{section.2.1}{Audience classification}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.1.1}{Audience class visitors}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.2}{Audience class registered users}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.3}{Audience class singles}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.4}{Audience class administrators}{section.2.1}% 12
+\BOOKMARK [1][-]{section.2.2}{Audience class hierarchy}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.3}{Audience Characterization}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.3.1}{Audience class Visitors}{section.2.3}% 15
+\BOOKMARK [2][-]{subsection.2.3.2}{Audience class Registered Users}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.3}{Audience class Singles}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.4}{Audience class Administrators}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.5}{Conclusion}{section.2.3}% 19
+\BOOKMARK [0][-]{chapter.3}{Conceptual Design}{}% 20
+\BOOKMARK [1][-]{section.3.1}{Task Modeling}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.1.1}{Audience class Visitors}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.2}{Audience class Registered Users}{section.3.1}% 23
+\BOOKMARK [2][-]{subsection.3.1.3}{Audience class Administrators}{section.3.1}% 24
+\BOOKMARK [1][-]{section.3.2}{Information modeling}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.3}{Navigational modeling}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.1}{Conceptual Structural Model}{section.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.2}{Visitor navigational track}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.3}{Registered user navigational track}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.4}{Singles navigational track}{section.3.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.5}{Administrator navigational track}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.6}{Login}{section.3.3}% 32
+\BOOKMARK [2][-]{subsection.3.3.7}{Register new user}{section.3.3}% 33
+\BOOKMARK [2][-]{subsection.3.3.8}{Search for members}{section.3.3}% 34
+\BOOKMARK [2][-]{subsection.3.3.9}{Information about the 10 last logged in members}{section.3.3}% 35
+\BOOKMARK [2][-]{subsection.3.3.10}{Change profile information}{section.3.3}% 36
+\BOOKMARK [2][-]{subsection.3.3.11}{Add profile information}{section.3.3}% 37
+\BOOKMARK [2][-]{subsection.3.3.12}{Delete profile information}{section.3.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.13}{Search for users}{section.3.3}% 39
+\BOOKMARK [2][-]{subsection.3.3.14}{Browse user profiles}{section.3.3}% 40
+\BOOKMARK [2][-]{subsection.3.3.15}{Put message on user wall}{section.3.3}% 41
+\BOOKMARK [2][-]{subsection.3.3.16}{Answer to a message on personal wall}{section.3.3}% 42
+\BOOKMARK [2][-]{subsection.3.3.17}{Delete message on personal wall}{section.3.3}% 43
+\BOOKMARK [2][-]{subsection.3.3.18}{Send private message}{section.3.3}% 44
+\BOOKMARK [2][-]{subsection.3.3.19}{Like user}{section.3.3}% 45
+\BOOKMARK [2][-]{subsection.3.3.20}{Manage liked list}{section.3.3}% 46
+\BOOKMARK [2][-]{subsection.3.3.21}{Notify user in case of profile updates}{section.3.3}% 47
+\BOOKMARK [2][-]{subsection.3.3.22}{Send attention to a user}{section.3.3}% 48
+\BOOKMARK [2][-]{subsection.3.3.23}{Send private message to a user}{section.3.3}% 49
+\BOOKMARK [2][-]{subsection.3.3.24}{Block or report a user}{section.3.3}% 50
+\BOOKMARK [2][-]{subsection.3.3.25}{Log out}{section.3.3}% 51
+\BOOKMARK [2][-]{subsection.3.3.26}{Terminate account}{section.3.3}% 52
+\BOOKMARK [2][-]{subsection.3.3.27}{Display personal information}{section.3.3}% 53
+\BOOKMARK [2][-]{subsection.3.3.28}{Display foreign information}{section.3.3}% 54
+\BOOKMARK [2][-]{subsection.3.3.29}{Browse user profile}{section.3.3}% 55
+\BOOKMARK [2][-]{subsection.3.3.30}{Send message to any user}{section.3.3}% 56
+\BOOKMARK [2][-]{subsection.3.3.31}{Block, disable and delete user account}{section.3.3}% 57
+\BOOKMARK [1][-]{section.3.4}{Functional Modeling}{chapter.3}% 58
+\BOOKMARK [2][-]{subsection.3.4.1}{Overview of the modules}{section.3.4}% 59
+\BOOKMARK [2][-]{subsection.3.4.2}{Login}{section.3.4}% 60
+\BOOKMARK [2][-]{subsection.3.4.3}{Register new user}{section.3.4}% 61
+\BOOKMARK [2][-]{subsection.3.4.4}{Logout}{section.3.4}% 62
+\BOOKMARK [2][-]{subsection.3.4.5}{Update user profile}{section.3.4}% 63
+\BOOKMARK [2][-]{subsection.3.4.6}{Delete account}{section.3.4}% 64
+\BOOKMARK [2][-]{subsection.3.4.7}{Terminate account}{section.3.4}% 65
+\BOOKMARK [2][-]{subsection.3.4.8}{Send message}{section.3.4}% 66
+\BOOKMARK [0][-]{chapter.4}{Implementation design}{}% 67
+\BOOKMARK [1][-]{section.4.1}{Site structure design}{chapter.4}% 68
+\BOOKMARK [0][-]{chapter.5}{Presentation design}{}% 69
+\BOOKMARK [1][-]{section.5.1}{Style and template design}{chapter.5}% 70
+\BOOKMARK [0][-]{chapter*.4}{Bibliography}{}% 71

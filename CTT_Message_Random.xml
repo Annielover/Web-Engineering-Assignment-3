@@ -1,0 +1,33 @@
+<?xmp version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="Message random user">
+    <Task Identifier="Message random user" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="Search for age and gender" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnabling"/>
+                <Parent name="Message random user"/>
+                <SiblingRight name="Display result list"/>
+            </Task>
+            <Task Identifier="Display result list" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="Message random user"/>
+                <SiblingLeft name="Search for age and gender"/>
+                <SiblingRight name="Select person"/>
+            </Task>
+            <Task Identifier="Select person" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="Message random user"/>
+                <SiblingLeft name="Display result list"/>
+                <SiblingRight name="Send message to person"/>
+            </Task>
+            <Task Identifier="Send message to person" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <Parent name="Message random user"/>
+                <SiblingLeft name="Select person"/>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

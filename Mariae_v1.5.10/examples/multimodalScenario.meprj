@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root xmlns="http://serialize.project.maria">
+    <settings/>
+    <project name="multimodalScenario">
+        <folder name="aui"/>            
+        <folder name="cui-desktop"/>
+        <folder name="ctt"/>
+        <folder name="cui-mobile-large"/>
+        <folder name="cui-mobile-small"/>
+        <folder name="cui-vocal"/>
+        <folder name="cui-multimodal-desktop">            
+            <file name="Multimodal_Desktop_flight_example.xml"/>
+        </folder>
+        <folder name="cui-multimodal-mobile">
+            <file name="Multimodal_Desktop_flight_example.xml"/>
+        </folder>
+        <folder name="services"/>
+        <folder name="annotation"/>
+        <folder name="binding"/>
+        <folder name="voice-xml"/>
+        <folder name="x+v"/>
+        <folder name="cui-distributed"/>
+        <folder name="cui-gestural"/>
+    </project>
+</root>

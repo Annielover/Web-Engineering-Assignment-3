@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://giove.isti.cnr.it" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns3="uri:xs" xmlns:ns4="http://schemas.xmlsoap.org/wsdl/" type="cui-desktop" schema-version="1.4.11">
+    <presentation name="Presentation 1">
+        <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" height="480px" width="310px" id="main" hidden="false">
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="header" hidden="false">
+                <activator id="obj43411" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <button margin-right="20px" border-color="#000000" border="1px" border-style="solid" width="75px">
+                        <label label_position="left">
+                            <text>
+<string>&lt;&lt; Back</string>
+<font_settings name="arial" color="#000000" size="10" align="left" style="Plain" weight="bold" decoration="none" mark="false"/>
+                            </text>
+                        </label>
+                    </button>
+                </activator>
+                <description id="obj21034" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <text>
+                        <string>Activity level</string>
+                        <font_settings name="arial" color="#000000" size="13" align="center" style="Plain" weight="bold" decoration="none" mark="false"/>
+                    </text>
+                </description>
+                <properties fieldset="false" bullet="false" position="row">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="ordered_list"/>
+                    <background/>
+                    <font_settings mark="false"/>
+                </properties>
+            </grouping>
+            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="body" hidden="false">
+                <tab_container border-width="1px" border-color="#0" border-style="solid" border-top-width="1px" border-top-color="#0" border-top-style="solid" border-bottom-width="1px" border-bottom-color="#0" border-bottom-style="solid" border-left-width="1px" border-left-color="#0" border-left-style="solid" border-right-width="1px" border-right-color="#0" border-right-style="solid">
+                    <tab_element closable="false">
+                        <label label_position="left">
+                            <text>
+<string>Glucose</string>
+<font_settings mark="false"/>
+                            </text>
+                        </label>
+                        <content>
+                            <description id="obj63998" enabled="true" focus="false" hidden="false" continuous_update="false">
+<text>
+    <string>glucose info</string>
+    <font_settings mark="false"/>
+</text>
+                            </description>
+                        </content>
+                    </tab_element>
+                    <tab_element closable="false">
+                        <label label_position="left">
+                            <text>
+<string>Activity</string>
+<font_settings mark="false"/>
+                            </text>
+                        </label>
+                        <content>
+                            <grouping role="none" hierarchy="false" ordering="false" continuous_update="false" id="handle_activity" hidden="false">
+<grouping role="none" hierarchy="false" ordering="false" continuous_update="false" margin="px" margin-top="px" margin-bottom="25px" margin-left="px" margin-right="px" border-width="1px" border-color="#0" border-style="solid" border-top-width="1px" border-top-color="#0" border-top-style="solid" border-bottom-width="1px" border-bottom-color="#0" border-bottom-style="solid" border-left-width="1px" border-left-color="#0" border-left-style="solid" border-right-width="1px" border-right-color="#0" border-right-style="solid" id="obj61467" hidden="false">
+    <description id="obj30846" enabled="true" focus="false" hidden="false" continuous_update="false">
+        <text>
+            <string>72%</string>
+            <file></file>
+            <font_settings name="arial" size="22pt" mark="false"/>
+        </text>
+    </description>
+    <feedback id="obj88659" enabled="true" focus="false" hidden="false" continuous_update="false">
+        <progress_bar min="0.0" max="100.0" value="72.0" show_value="false" margin="10px" margin-top="10px" margin-bottom="10px" margin-left="10px" margin-right="10px" float="left" border-width="3px" border-color="#0" border-style="solid" border-top-width="3px" border-top-color="#0" border-top-style="solid" border-bottom-width="3px" border-bottom-color="#0" border-bottom-style="solid" border-left-width="3px" border-left-color="#0" border-left-style="solid" border-right-width="3px" border-right-color="#0" border-right-style="solid" width="90%">
+            <background>
+                <background_color>#FFFFFF</background_color>
+                <background_image></background_image>
+            </background>
+            <bar>
+                <background_color>#CCCCCC</background_color>
+                <background_image></background_image>
+            </bar>
+        </progress_bar>
+    </feedback>
+    <description id="obj13850" enabled="true" focus="false" hidden="false" continuous_update="false">
+        <text>
+            <string>Last update: today at 09:13</string>
+            <file></file>
+            <font_settings align="center" mark="false"/>
+        </text>
+    </description>
+    <properties fieldset="false" bullet="false" position="column">
+        <hierarchy_properties/>
+        <ordering_properties visualization="ordered_list"/>
+        <background/>
+        <font_settings align="center" mark="false"/>
+    </properties>
+</grouping>
+<description id="obj53845" enabled="true" focus="false" hidden="false" continuous_update="false">
+    <text margin="5px" margin-top="25px" margin-bottom="25px" margin-left="5px" margin-right="5px">
+        <string>You're doing well!!! Just a little more...</string>
+        <font_settings size="12pt" weight="bold" mark="false"/>
+    </text>
+</description>
+<activator id="obj48732" enabled="true" focus="false" hidden="false" continuous_update="false">
+    <button margin-top="25px" margin-bottom="10px" border-color="#000000" border="1px" border-style="solid" width="90%">
+        <label label_position="left">
+            <text>
+                <string>View history</string>
+                <font_settings name="arial" color="#000000" size="12" align="left" style="Plain" weight="bold" decoration="none" mark="false"/>
+            </text>
+        </label>
+    </button>
+</activator>
+<activator id="obj48732_copy1" enabled="true" focus="false" hidden="false" continuous_update="false">
+    <button margin-top="2px" margin-bottom="10px" border-color="#000000" border="1px" border-style="solid" width="90%">
+        <label label_position="left">
+            <text>
+                <string>Get advice</string>
+                <font_settings name="arial" color="#000000" size="12" align="left" style="Plain" weight="bold" decoration="none" mark="false"/>
+            </text>
+        </label>
+    </button>
+</activator>
+<properties fieldset="false" bullet="false" position="row">
+    <hierarchy_properties/>
+    <ordering_properties visualization="ordered_list"/>
+    <background/>
+    <font_settings align="center" mark="false"/>
+</properties>
+                            </grouping>
+                        </content>
+                    </tab_element>
+                    <tab_element closable="false">
+                        <label label_position="left">
+                            <text>
+<string>Medicine</string>
+<font_settings mark="false"/>
+                            </text>
+                        </label>
+                        <content>
+                            <description id="obj3088" enabled="true" focus="false" hidden="false" continuous_update="false">
+<text>
+    <string>medicine content</string>
+    <font_settings mark="false"/>
+</text>
+                            </description>
+                        </content>
+                    </tab_element>
+                    <tab_element closable="false">
+                        <label label_position="left">
+                            <text>
+<string>More</string>
+<font_settings mark="false"/>
+                            </text>
+                        </label>
+                        <content>
+                            <description id="obj59179" enabled="true" focus="false" hidden="false" continuous_update="false">
+<text>
+    <string>More</string>
+    <font_settings mark="false"/>
+</text>
+                            </description>
+                        </content>
+                    </tab_element>
+                </tab_container>
+                <properties fieldset="false" bullet="false" position="row">
+                    <hierarchy_properties/>
+                    <ordering_properties visualization="ordered_list"/>
+                    <background/>
+                    <font_settings mark="false"/>
+                </properties>
+            </grouping>
+            <properties fieldset="false" bullet="false" position="row">
+                <hierarchy_properties/>
+                <ordering_properties visualization="ordered_list"/>
+                <background/>
+                <font_settings name="tahoma" color="#000000" size="10" align="left" style="Plain" weight="normal" decoration="none" mark="false"/>
+            </properties>
+        </grouping>
+        <presentation_settings>
+            <title>Smarcos WP4</title>
+            <background/>
+            <font_settings mark="false"/>
+        </presentation_settings>
+    </presentation>
+</interface>

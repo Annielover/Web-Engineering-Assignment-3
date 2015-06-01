@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://giove.isti.cnr.it" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns3="uri:xs" xmlns:ns4="http://schemas.xmlsoap.org/wsdl/" type="cui-distributed" schema-version="1.4.12">
+    <external_functions>
+        <function reference="http://taurus.isti.cnr.it/test/test/response" namespace="http://taurus:25807/ws_test/test?wsdl" name="test_test_response" type="web_service">
+            <output type="ns1_responseResponse" name="parameters"/>
+            <input name="parameters" type="ns1_response"/>
+        </function>
+    </external_functions>
+    <data>
+        <xs:schema finalDefault="" blockDefault="" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+            <xs:complexType name="ns1_test_test_response" mixed="false">
+                <xs:sequence minOccurs="1" maxOccurs="1">
+                    <xs:element name="input">
+                        <xs:complexType mixed="false">
+                            <xs:sequence>
+<xs:element name="parameters" type="ns1_response"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="output">
+                        <xs:complexType mixed="false">
+                            <xs:sequence>
+<xs:element name="parameters" type="ns1_responseResponse"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ns1_response" mixed="false">
+                <xs:sequence>
+                    <xs:element name="res" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ns1_responseResponse" mixed="false">
+                <xs:sequence>
+                    <xs:element name="str" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </data>
+    <presentation name="Presentation1">
+        <grouping hierarchy="false" ordering="false" continuous_update="false" id="container" hidden="false" width="100%">
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="grouping_hdr" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <properties>
+                    <label label_position="left">
+                        <text role="heading1" margin-top="0px" margin-bottom="0px" margin-left="0px;" margin-right="0px;" float="heading1" border-color="#000000" border="2px" border-style="solid">
+                            <string>Presentation_1</string>
+                            <font_settings name="arial" color="#FFFFFF" size="28pt" align="center"/>
+                        </text>
+                    </label>
+                    <background>
+                        <background_color>#32639A</background_color>
+                    </background>
+                    <font_settings/>
+                </properties>
+            </grouping>
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="img" hidden="false" margin-top="30px" margin-left="30%" height="660px" width="530px">
+                <description id="img1" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <description_desktop>
+                        <image source="http://giove.isti.cnr.it/Users/Manca/img/1.jpg" margin-bottom="10px" margin-right="10px">
+                            <label label_position="down">
+<text>
+    <string>1</string>
+    <font_settings/>
+</text>
+                            </label>
+                        </image>
+                    </description_desktop>
+                    <description_mobile>
+                        <image source="http://giove.isti.cnr.it/Users/Manca/img/1_copia.jpg" margin-bottom="10px">
+                            <label label_position="down">
+<text>
+    <string>1</string>
+    <font_settings/>
+</text>
+                            </label>
+                        </image>
+                    </description_mobile>
+                </description>
+                <description id="img2" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <description_desktop>
+                        <image source="http://giove.isti.cnr.it/Users/Manca/img/2.jpg" margin-bottom="10px" margin-right="10px">
+                            <label label_position="down">
+<text>
+    <string>1</string>
+    <font_settings/>
+</text>
+                            </label>
+                        </image>
+                    </description_desktop>
+                    <description_mobile>
+                        <image source="http://giove.isti.cnr.it/Users/Manca/img/2_copia.jpg" margin-bottom="10px" margin-right="5px">
+                            <label label_position="down">
+<text>
+    <string>1</string>
+    <font_settings/>
+</text>
+                            </label>
+                        </image>
+                    </description_mobile>
+                </description>
+                <description id="img3" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <description_desktop>
+                        <image source="http://giove.isti.cnr.it/Users/Manca/img/3.jpg" margin-bottom="10px" margin-right="10px">
+                            <label label_position="down">
+<text>
+    <string>1</string>
+    <font_settings/>
+</text>
+                            </label>
+                        </image>
+                    </description_desktop>
+                    <description_mobile>
+                        <image source="http://giove.isti.cnr.it/Users/Manca/img/3_copia.jpg">
+                            <label label_position="down">
+<text>
+    <string>1</string>
+    <font_settings/>
+</text>
+                            </label>
+                        </image>
+                    </description_mobile>
+                </description>
+                <description id="img4" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <description_desktop>
+                        <image source="http://giove.isti.cnr.it/Users/Manca/img/4.jpg" margin-right="5px">
+                            <label label_position="down">
+<text>
+    <string>1</string>
+    <font_settings/>
+</text>
+                            </label>
+                        </image>
+                    </description_desktop>
+                    <description_mobile>
+                        <image source="http://giove.isti.cnr.it/Users/Manca/img/4_copia.jpg" margin-bottom="10px" margin-right="10px">
+                            <label label_position="down">
+<text>
+    <string>1</string>
+    <font_settings/>
+</text>
+                            </label>
+                        </image>
+                    </description_mobile>
+                </description>
+                <properties fieldset="false" bullet="false">
+                    <background/>
+                    <font_settings/>
+                </properties>
+            </grouping>
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="grouping_in" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <single_choice cardinality="0" id="P1_Enter_response_res" data_reference="data:ns1_test_test_response/input/parameters/res" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <choice_element value="1">
+                        <label label_position="left">
+                            <text>
+<string>1</string>
+<font_settings/>
+                            </text>
+                        </label>
+                    </choice_element>
+                    <choice_element value="2">
+                        <label label_position="left">
+                            <text>
+<string>2</string>
+<font_settings/>
+                            </text>
+                        </label>
+                    </choice_element>
+                    <choice_element value="3">
+                        <label label_position="left">
+                            <text>
+<string>3</string>
+<font_settings/>
+                            </text>
+                        </label>
+                    </choice_element>
+                    <choice_element value="4">
+                        <label label_position="left">
+                            <text>
+<string>4</string>
+<font_settings/>
+                            </text>
+                        </label>
+                    </choice_element>
+                    <single_choice_desktop>
+                        <radio_button>
+                            <label label_position="left">
+<text>
+    <string>Choose response</string>
+    <font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold"/>
+</text>
+                            </label>
+                        </radio_button>
+                    </single_choice_desktop>
+                    <single_choice_mobile>
+                        <radio_button>
+                            <label label_position="left">
+<text>
+    <string>Choose response</string>
+    <font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold"/>
+</text>
+                            </label>
+                        </radio_button>
+                    </single_choice_mobile>
+                </single_choice>
+                <properties position="column">
+                    <label label_position="left">
+                        <text role="heading2" float="heading2" border-bottom="1px" border-bottom-color="#E2E2E2" border-bottom-style="solid">
+                            <string>Which of these pictures is not an artwork by Vatteroni</string>
+                            <file></file>
+                            <font_settings name="arial" color="#32639A" size="18pt" align="left"/>
+                        </text>
+                    </label>
+                    <background/>
+                    <font_settings/>
+                </properties>
+            </grouping>
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="grouping_out" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <description id="P1_out__response" data_reference="data:ns1_test_test_response/output/parameters/str" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <description_desktop>
+                        <text>
+                            <string>Server response</string>
+                            <font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold"/>
+                        </text>
+                    </description_desktop>
+                    <description_mobile>
+                        <text>
+                            <string>Server response</string>
+                            <font_settings name="arial" color="#787878" size="13pt" align="left" weight="bold"/>
+                        </text>
+                    </description_mobile>
+                </description>
+                <properties>
+                    <background/>
+                    <font_settings name="arial" color="#787878" size="12" align="left"/>
+                </properties>
+            </grouping>
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="grouping_activator" hidden="false" border-style="none" border-top-style="none" border-bottom-style="none" border-left-style="none" border-right-style="none">
+                <activator id="P1_Invoke_response" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <events>
+                        <activation>
+                            <handler>
+<script>
+    <change_property data_reference="ns1_test_test_response/input/parameters/res" data_value="ui:P1_Enter_response_res/value"/>
+    <invoke_function name="test_test_response" namespace="http://taurus:25807/ws_test/test?wsdl">
+        <parameter name="parameters" data_ref="ns1_test_test_response/input/parameters"/>
+        <result name="parameters" data_ref="ns1_test_test_response/output/parameters"/>
+    </invoke_function>
+</script>
+                            </handler>
+                        </activation>
+                    </events>
+                    <activator_desktop>
+                        <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                            <label label_position="left">
+<text role="normal" float="normal">
+    <string>Invoke Service</string>
+    <font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold"/>
+</text>
+                            </label>
+                        </button>
+                    </activator_desktop>
+                    <activator_mobile>
+                        <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                            <label label_position="left">
+<text role="normal" float="normal">
+    <string>Invoke Service</string>
+    <font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold"/>
+</text>
+                            </label>
+                        </button>
+                    </activator_mobile>
+                </activator>
+                <activator id="Distribution_actv" enabled="true" focus="false" hidden="false" continuous_update="false">
+                    <distribution_event>
+                        <handler>
+                            <change_property interactor_id="Presentation1">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="container">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="grouping_hdr">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="img">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="img1">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="img2">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="img3">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="img4">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="grouping_in">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="P1_Enter_response_res">
+<phase name="input" care_value="equivalence">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+<phase name="prompt" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+<phase name="feedback" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="grouping_out">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="P1_out__response">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="grouping_activator">
+<phase name="output" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="P1_Invoke_response">
+<phase name="input" care_value="equivalence">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+<phase name="prompt" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+<phase name="feedback" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                            <change_property interactor_id="Distribution_actv">
+<phase name="input" care_value="equivalence">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+<phase name="prompt" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+<phase name="feedback" care_value="redundancy">
+    <device name="paterno" platform="desktop" ip="146.48.83.252"/>
+    <device name="iPhone-Lab" platform="mobile" ip="146.48.83.212"/>
+</phase>
+                            </change_property>
+                        </handler>
+                    </distribution_event>
+                    <activator_desktop>
+                        <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                            <label label_position="left">
+<text role="normal" float="normal">
+    <string>Distribute UI</string>
+    <font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold"/>
+</text>
+                            </label>
+                        </button>
+                    </activator_desktop>
+                    <activator_mobile>
+                        <button margin-top="3px" margin-bottom="3px" margin-left="3px" margin-right="3px" border-color="#000000" border="1" border-style="solid">
+                            <label label_position="left">
+<text role="normal" float="normal">
+    <string>Distribute UI</string>
+    <font_settings name="arial" color="#000000" size="13pt" align="left" weight="bold"/>
+</text>
+                            </label>
+                        </button>
+                    </activator_mobile>
+                </activator>
+                <properties fieldset="false" bullet="false">
+                    <background/>
+                    <font_settings/>
+                </properties>
+            </grouping>
+            <properties fieldset="false" bullet="false">
+                <background/>
+                <font_settings/>
+            </properties>
+        </grouping>
+        <presentation_settings>
+            <distribution care_value="assignment">
+                <bind>
+                    <interactor id="Presentation1"/>
+                    <device name="taurus" platform="desktop" ip="146.48.85.134"/>
+                </bind>
+            </distribution>
+            <title>Presentation_1</title>
+            <background/>
+            <font_settings/>
+        </presentation_settings>
+    </presentation>
+</interface>

@@ -1,0 +1,26 @@
+<?xmp version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="Browse user profile">
+    <Task Identifier="Browse user profile" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="Access browsing function" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnabling"/>
+                <Parent name="Browse user profile"/>
+                <SiblingRight name="List profiles"/>
+            </Task>
+            <Task Identifier="List profiles" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="Browse user profile"/>
+                <SiblingLeft name="Access browsing function"/>
+                <SiblingRight name="Browse profiles"/>
+            </Task>
+            <Task Identifier="Browse profiles" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <Parent name="Browse user profile"/>
+                <SiblingLeft name="List profiles"/>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

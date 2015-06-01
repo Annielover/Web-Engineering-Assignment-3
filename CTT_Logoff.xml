@@ -1,0 +1,19 @@
+<?xmp version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="Log off user">
+    <Task Identifier="Log off user" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="Log off" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="Disabling"/>
+                <Parent name="Log off user"/>
+                <SiblingRight name="Redirect to home page"/>
+            </Task>
+            <Task Identifier="Redirect to home page" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <Parent name="Log off user"/>
+                <SiblingLeft name="Log off"/>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

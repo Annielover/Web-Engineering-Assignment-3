@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="HomeScenarioWSversion2Service">
+    <Task Identifier="HomeScenarioWSversion2Service" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>HomeScenarioWSversion2Service</Name>
+        <Type></Type>
+        <SubTask>
+            <Task Identifier="login" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>login</Name>
+                <Type></Type>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="HomeScenarioWSversion2Service"/>
+                <SiblingRight name="Level 2"/>
+                <SubTask>
+                    <Task Identifier="Enter login_parameters" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter login_parameters</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="login"/>
+                        <SiblingRight name="Invoke login"/>
+                        <SubTask>
+                            <Task Identifier="Enter login UserName" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>Enter login UserName</Name>
+<Type>Edit</Type>
+<TemporalOperator name="OrderIndependence"/>
+<Parent name="Enter login_parameters"/>
+<SiblingRight name="Enter login Password"/>
+                            </Task>
+                            <Task Identifier="Enter login Password" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>Enter login Password</Name>
+<Type>Edit</Type>
+<TemporalOperator name="OrderIndependence"/>
+<Parent name="Enter login_parameters"/>
+<SiblingLeft name="Enter login UserName"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                    <Task Identifier="Invoke login" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke login</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="login"/>
+                        <SiblingLeft name="Enter login_parameters"/>
+                        <SiblingRight name="Execute login"/>
+                    </Task>
+                    <Task Identifier="Execute login" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute login</Name>
+                        <Type>Login</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="login"/>
+                        <SiblingLeft name="Invoke login"/>
+                        <SiblingRight name="Output  login parameters"/>
+                    </Task>
+                    <Task Identifier="Output  login parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  login parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="login"/>
+                        <SiblingLeft name="Execute login"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Level 2" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Level 2</Name>
+                <Type></Type>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="HomeScenarioWSversion2Service"/>
+                <SiblingLeft name="login"/>
+                <SubTask>
+                    <Task Identifier="getDeviceList" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>getDeviceList</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Level 2"/>
+                        <SiblingRight name="pick from device"/>
+                        <SubTask>
+                            <Task Identifier="Invoke getDeviceList" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>Invoke getDeviceList</Name>
+<Type>Control</Type>
+<TemporalOperator name="SequentialEnablingInfo"/>
+<Parent name="getDeviceList"/>
+<SiblingRight name="Execute getDeviceList"/>
+                            </Task>
+                            <Task Identifier="Execute getDeviceList" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>Execute getDeviceList</Name>
+<Type></Type>
+<TemporalOperator name="SequentialEnablingInfo"/>
+<Parent name="getDeviceList"/>
+<SiblingLeft name="Invoke getDeviceList"/>
+<SiblingRight name="Output  getDeviceList parameters"/>
+                            </Task>
+                            <Task Identifier="Output  getDeviceList parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>Output  getDeviceList parameters</Name>
+<Type>Visualise</Type>
+<TemporalOperator name="OrderIndependence"/>
+<Parent name="getDeviceList"/>
+<SiblingLeft name="Execute getDeviceList"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                    <Task Identifier="pick from device" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>pick from device</Name>
+                        <Type>SingleChoice</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Level 2"/>
+                        <SiblingLeft name="getDeviceList"/>
+                        <SiblingRight name="Level 3"/>
+                    </Task>
+                    <Task Identifier="Level 3" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Level 3</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Level 2"/>
+                        <SiblingLeft name="pick from device"/>
+                        <SubTask>
+                            <Task Identifier="dimmerlightbulb" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>dimmerlightbulb</Name>
+<Type></Type>
+<TemporalOperator name="Choice"/>
+<Parent name="Level 3"/>
+<SiblingRight name="thermostat"/>
+<SubTask>
+    <Task Identifier="Check dimmerlightbulb" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Check dimmerlightbulb</Name>
+        <Type></Type>
+        <Precondition operator="and">
+            <ConditionGroup operator="eq">
+                <ConditionLiteral value="type"/>
+                <ConditionLiteral value="dimmerlightbulb"/>
+            </ConditionGroup>
+        </Precondition>
+        <TemporalOperator name="SequentialEnablingInfo"/>
+        <Parent name="dimmerlightbulb"/>
+        <SiblingRight name="Enabled dimmerlightbulb"/>
+    </Task>
+    <Task Identifier="Enabled dimmerlightbulb" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Enabled dimmerlightbulb</Name>
+        <Type></Type>
+        <Parent name="dimmerlightbulb"/>
+        <SiblingLeft name="Check dimmerlightbulb"/>
+        <SubTask>
+            <Task Identifier="Dimmerlightbulb_getRange" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Dimmerlightbulb_getRange</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled dimmerlightbulb"/>
+                <SiblingRight name="Dimmerlightbulb_getDimmer"/>
+                <SubTask>
+                    <Task Identifier="Invoke Dimmerlightbulb_getRange" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Dimmerlightbulb_getRange</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_getRange"/>
+                        <SiblingRight name="Execute Dimmerlightbulb_getRange"/>
+                    </Task>
+                    <Task Identifier="Execute Dimmerlightbulb_getRange" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Dimmerlightbulb_getRange</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_getRange"/>
+                        <SiblingLeft name="Invoke Dimmerlightbulb_getRange"/>
+                        <SiblingRight name="Output  Dimmerlightbulb_getRange parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Dimmerlightbulb_getRange parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Dimmerlightbulb_getRange parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Dimmerlightbulb_getRange"/>
+                        <SiblingLeft name="Execute Dimmerlightbulb_getRange"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Dimmerlightbulb_getDimmer" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Dimmerlightbulb_getDimmer</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled dimmerlightbulb"/>
+                <SiblingLeft name="Dimmerlightbulb_getRange"/>
+                <SiblingRight name="Dimmerlightbulb_setDimmer"/>
+                <SubTask>
+                    <Task Identifier="Invoke Dimmerlightbulb_getDimmer" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Dimmerlightbulb_getDimmer</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_getDimmer"/>
+                        <SiblingRight name="Execute Dimmerlightbulb_getDimmer"/>
+                    </Task>
+                    <Task Identifier="Execute Dimmerlightbulb_getDimmer" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Dimmerlightbulb_getDimmer</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_getDimmer"/>
+                        <SiblingLeft name="Invoke Dimmerlightbulb_getDimmer"/>
+                        <SiblingRight name="Output  Dimmerlightbulb_getDimmer parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Dimmerlightbulb_getDimmer parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Dimmerlightbulb_getDimmer parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Dimmerlightbulb_getDimmer"/>
+                        <SiblingLeft name="Execute Dimmerlightbulb_getDimmer"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Dimmerlightbulb_setDimmer" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Dimmerlightbulb_setDimmer</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled dimmerlightbulb"/>
+                <SiblingLeft name="Dimmerlightbulb_getDimmer"/>
+                <SiblingRight name="Dimmerlightbulb_turnOn"/>
+                <SubTask>
+                    <Task Identifier="Enter Dimmerlightbulb_setDimmer dimmerValue" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter Dimmerlightbulb_setDimmer dimmerValue</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_setDimmer"/>
+                        <SiblingRight name="Invoke Dimmerlightbulb_setDimmer"/>
+                    </Task>
+                    <Task Identifier="Invoke Dimmerlightbulb_setDimmer" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Dimmerlightbulb_setDimmer</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_setDimmer"/>
+                        <SiblingLeft name="Enter Dimmerlightbulb_setDimmer dimmerValue"/>
+                        <SiblingRight name="Execute Dimmerlightbulb_setDimmer"/>
+                    </Task>
+                    <Task Identifier="Execute Dimmerlightbulb_setDimmer" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Dimmerlightbulb_setDimmer</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_setDimmer"/>
+                        <SiblingLeft name="Invoke Dimmerlightbulb_setDimmer"/>
+                        <SiblingRight name="Output  Dimmerlightbulb_setDimmer parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Dimmerlightbulb_setDimmer parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Dimmerlightbulb_setDimmer parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Dimmerlightbulb_setDimmer"/>
+                        <SiblingLeft name="Execute Dimmerlightbulb_setDimmer"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Dimmerlightbulb_turnOn" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Dimmerlightbulb_turnOn</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled dimmerlightbulb"/>
+                <SiblingLeft name="Dimmerlightbulb_setDimmer"/>
+                <SiblingRight name="Dimmerlightbulb_isOn"/>
+                <SubTask>
+                    <Task Identifier="Enter Dimmerlightbulb_turnOn on" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter Dimmerlightbulb_turnOn on</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_turnOn"/>
+                        <SiblingRight name="Invoke Dimmerlightbulb_turnOn"/>
+                    </Task>
+                    <Task Identifier="Invoke Dimmerlightbulb_turnOn" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Dimmerlightbulb_turnOn</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_turnOn"/>
+                        <SiblingLeft name="Enter Dimmerlightbulb_turnOn on"/>
+                        <SiblingRight name="Execute Dimmerlightbulb_turnOn"/>
+                    </Task>
+                    <Task Identifier="Execute Dimmerlightbulb_turnOn" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Dimmerlightbulb_turnOn</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_turnOn"/>
+                        <SiblingLeft name="Invoke Dimmerlightbulb_turnOn"/>
+                        <SiblingRight name="Output  Dimmerlightbulb_turnOn parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Dimmerlightbulb_turnOn parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Dimmerlightbulb_turnOn parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Dimmerlightbulb_turnOn"/>
+                        <SiblingLeft name="Execute Dimmerlightbulb_turnOn"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Dimmerlightbulb_isOn" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Dimmerlightbulb_isOn</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled dimmerlightbulb"/>
+                <SiblingLeft name="Dimmerlightbulb_turnOn"/>
+                <SubTask>
+                    <Task Identifier="Invoke Dimmerlightbulb_isOn" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Dimmerlightbulb_isOn</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_isOn"/>
+                        <SiblingRight name="Execute Dimmerlightbulb_isOn"/>
+                    </Task>
+                    <Task Identifier="Execute Dimmerlightbulb_isOn" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Dimmerlightbulb_isOn</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Dimmerlightbulb_isOn"/>
+                        <SiblingLeft name="Invoke Dimmerlightbulb_isOn"/>
+                        <SiblingRight name="Output  Dimmerlightbulb_isOn parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Dimmerlightbulb_isOn parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Dimmerlightbulb_isOn parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Dimmerlightbulb_isOn"/>
+                        <SiblingLeft name="Execute Dimmerlightbulb_isOn"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</SubTask>
+                            </Task>
+                            <Task Identifier="thermostat" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>thermostat</Name>
+<Type></Type>
+<TemporalOperator name="Choice"/>
+<Parent name="Level 3"/>
+<SiblingLeft name="dimmerlightbulb"/>
+<SiblingRight name="oven"/>
+<SubTask>
+    <Task Identifier="Check thermostat" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Check thermostat</Name>
+        <Type></Type>
+        <Precondition operator="and">
+            <ConditionGroup operator="eq">
+                <ConditionLiteral value="type"/>
+                <ConditionLiteral value="thermostat"/>
+            </ConditionGroup>
+        </Precondition>
+        <TemporalOperator name="SequentialEnablingInfo"/>
+        <Parent name="thermostat"/>
+        <SiblingRight name="Enabled thermostat"/>
+    </Task>
+    <Task Identifier="Enabled thermostat" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Enabled thermostat</Name>
+        <Type></Type>
+        <Parent name="thermostat"/>
+        <SiblingLeft name="Check thermostat"/>
+        <SubTask>
+            <Task Identifier="Thermostat_isOn" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Thermostat_isOn</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled thermostat"/>
+                <SiblingRight name="Thermostat_getTemperature"/>
+                <SubTask>
+                    <Task Identifier="Invoke Thermostat_isOn" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Thermostat_isOn</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Thermostat_isOn"/>
+                        <SiblingRight name="Execute Thermostat_isOn"/>
+                    </Task>
+                    <Task Identifier="Execute Thermostat_isOn" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Thermostat_isOn</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Thermostat_isOn"/>
+                        <SiblingLeft name="Invoke Thermostat_isOn"/>
+                        <SiblingRight name="Output  Thermostat_isOn parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Thermostat_isOn parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Thermostat_isOn parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Thermostat_isOn"/>
+                        <SiblingLeft name="Execute Thermostat_isOn"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Thermostat_getTemperature" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Thermostat_getTemperature</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled thermostat"/>
+                <SiblingLeft name="Thermostat_isOn"/>
+                <SiblingRight name="Thermostat_turnOn"/>
+                <SubTask>
+                    <Task Identifier="Invoke Thermostat_getTemperature" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Thermostat_getTemperature</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Thermostat_getTemperature"/>
+                        <SiblingRight name="Execute Thermostat_getTemperature"/>
+                    </Task>
+                    <Task Identifier="Execute Thermostat_getTemperature" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Thermostat_getTemperature</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Thermostat_getTemperature"/>
+                        <SiblingLeft name="Invoke Thermostat_getTemperature"/>
+                        <SiblingRight name="Output  Thermostat_getTemperature parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Thermostat_getTemperature parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Thermostat_getTemperature parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Thermostat_getTemperature"/>
+                        <SiblingLeft name="Execute Thermostat_getTemperature"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Thermostat_turnOn" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Thermostat_turnOn</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled thermostat"/>
+                <SiblingLeft name="Thermostat_getTemperature"/>
+                <SiblingRight name="Thermostat_setTemperature"/>
+                <SubTask>
+                    <Task Identifier="Enter Thermostat_turnOn on" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter Thermostat_turnOn on</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Thermostat_turnOn"/>
+                        <SiblingRight name="Invoke Thermostat_turnOn"/>
+                    </Task>
+                    <Task Identifier="Invoke Thermostat_turnOn" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Thermostat_turnOn</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Thermostat_turnOn"/>
+                        <SiblingLeft name="Enter Thermostat_turnOn on"/>
+                        <SiblingRight name="Execute Thermostat_turnOn"/>
+                    </Task>
+                    <Task Identifier="Execute Thermostat_turnOn" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Thermostat_turnOn</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Thermostat_turnOn"/>
+                        <SiblingLeft name="Invoke Thermostat_turnOn"/>
+                        <SiblingRight name="Output  Thermostat_turnOn parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Thermostat_turnOn parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Thermostat_turnOn parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Thermostat_turnOn"/>
+                        <SiblingLeft name="Execute Thermostat_turnOn"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Thermostat_setTemperature" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Thermostat_setTemperature</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled thermostat"/>
+                <SiblingLeft name="Thermostat_turnOn"/>
+                <SubTask>
+                    <Task Identifier="Enter Thermostat_setTemperature temperature" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter Thermostat_setTemperature temperature</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Thermostat_setTemperature"/>
+                        <SiblingRight name="Invoke Thermostat_setTemperature"/>
+                    </Task>
+                    <Task Identifier="Invoke Thermostat_setTemperature" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Thermostat_setTemperature</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Thermostat_setTemperature"/>
+                        <SiblingLeft name="Enter Thermostat_setTemperature temperature"/>
+                        <SiblingRight name="Execute Thermostat_setTemperature"/>
+                    </Task>
+                    <Task Identifier="Execute Thermostat_setTemperature" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Thermostat_setTemperature</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Thermostat_setTemperature"/>
+                        <SiblingLeft name="Invoke Thermostat_setTemperature"/>
+                        <SiblingRight name="Output  Thermostat_setTemperature parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Thermostat_setTemperature parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Thermostat_setTemperature parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Thermostat_setTemperature"/>
+                        <SiblingLeft name="Execute Thermostat_setTemperature"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</SubTask>
+                            </Task>
+                            <Task Identifier="oven" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>oven</Name>
+<Type></Type>
+<TemporalOperator name="Choice"/>
+<Parent name="Level 3"/>
+<SiblingLeft name="thermostat"/>
+<SiblingRight name="washingmachine"/>
+<SubTask>
+    <Task Identifier="Check oven" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Check oven</Name>
+        <Type></Type>
+        <Precondition operator="and">
+            <ConditionGroup operator="eq">
+                <ConditionLiteral value="type"/>
+                <ConditionLiteral value="oven"/>
+            </ConditionGroup>
+        </Precondition>
+        <TemporalOperator name="SequentialEnablingInfo"/>
+        <Parent name="oven"/>
+        <SiblingRight name="Enabled oven"/>
+    </Task>
+    <Task Identifier="Enabled oven" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Enabled oven</Name>
+        <Type></Type>
+        <Parent name="oven"/>
+        <SiblingLeft name="Check oven"/>
+        <SubTask>
+            <Task Identifier="Oven_getTemperatureRange" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Oven_getTemperatureRange</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled oven"/>
+                <SiblingRight name="Oven_setTemperature"/>
+                <SubTask>
+                    <Task Identifier="Invoke Oven_getTemperatureRange" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Oven_getTemperatureRange</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_getTemperatureRange"/>
+                        <SiblingRight name="Execute Oven_getTemperatureRange"/>
+                    </Task>
+                    <Task Identifier="Execute Oven_getTemperatureRange" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Oven_getTemperatureRange</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_getTemperatureRange"/>
+                        <SiblingLeft name="Invoke Oven_getTemperatureRange"/>
+                        <SiblingRight name="Output  Oven_getTemperatureRange parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Oven_getTemperatureRange parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Oven_getTemperatureRange parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Oven_getTemperatureRange"/>
+                        <SiblingLeft name="Execute Oven_getTemperatureRange"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Oven_setTemperature" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Oven_setTemperature</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled oven"/>
+                <SiblingLeft name="Oven_getTemperatureRange"/>
+                <SiblingRight name="Oven_getTemperature"/>
+                <SubTask>
+                    <Task Identifier="Enter Oven_setTemperature temperature" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter Oven_setTemperature temperature</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_setTemperature"/>
+                        <SiblingRight name="Invoke Oven_setTemperature"/>
+                    </Task>
+                    <Task Identifier="Invoke Oven_setTemperature" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Oven_setTemperature</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_setTemperature"/>
+                        <SiblingLeft name="Enter Oven_setTemperature temperature"/>
+                        <SiblingRight name="Execute Oven_setTemperature"/>
+                    </Task>
+                    <Task Identifier="Execute Oven_setTemperature" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Oven_setTemperature</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_setTemperature"/>
+                        <SiblingLeft name="Invoke Oven_setTemperature"/>
+                        <SiblingRight name="Output  Oven_setTemperature parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Oven_setTemperature parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Oven_setTemperature parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Oven_setTemperature"/>
+                        <SiblingLeft name="Execute Oven_setTemperature"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Oven_getTemperature" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Oven_getTemperature</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled oven"/>
+                <SiblingLeft name="Oven_setTemperature"/>
+                <SiblingRight name="Oven_isOn"/>
+                <SubTask>
+                    <Task Identifier="Invoke Oven_getTemperature" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Oven_getTemperature</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_getTemperature"/>
+                        <SiblingRight name="Execute Oven_getTemperature"/>
+                    </Task>
+                    <Task Identifier="Execute Oven_getTemperature" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Oven_getTemperature</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_getTemperature"/>
+                        <SiblingLeft name="Invoke Oven_getTemperature"/>
+                        <SiblingRight name="Output  Oven_getTemperature parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Oven_getTemperature parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Oven_getTemperature parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Oven_getTemperature"/>
+                        <SiblingLeft name="Execute Oven_getTemperature"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Oven_isOn" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Oven_isOn</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled oven"/>
+                <SiblingLeft name="Oven_getTemperature"/>
+                <SiblingRight name="Oven_turnOn"/>
+                <SubTask>
+                    <Task Identifier="Invoke Oven_isOn" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Oven_isOn</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_isOn"/>
+                        <SiblingRight name="Execute Oven_isOn"/>
+                    </Task>
+                    <Task Identifier="Execute Oven_isOn" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Oven_isOn</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_isOn"/>
+                        <SiblingLeft name="Invoke Oven_isOn"/>
+                        <SiblingRight name="Output  Oven_isOn parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Oven_isOn parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Oven_isOn parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Oven_isOn"/>
+                        <SiblingLeft name="Execute Oven_isOn"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Oven_turnOn" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Oven_turnOn</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled oven"/>
+                <SiblingLeft name="Oven_isOn"/>
+                <SubTask>
+                    <Task Identifier="Enter Oven_turnOn on" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter Oven_turnOn on</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_turnOn"/>
+                        <SiblingRight name="Invoke Oven_turnOn"/>
+                    </Task>
+                    <Task Identifier="Invoke Oven_turnOn" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Oven_turnOn</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_turnOn"/>
+                        <SiblingLeft name="Enter Oven_turnOn on"/>
+                        <SiblingRight name="Execute Oven_turnOn"/>
+                    </Task>
+                    <Task Identifier="Execute Oven_turnOn" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Oven_turnOn</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Oven_turnOn"/>
+                        <SiblingLeft name="Invoke Oven_turnOn"/>
+                        <SiblingRight name="Output  Oven_turnOn parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Oven_turnOn parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Oven_turnOn parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Oven_turnOn"/>
+                        <SiblingLeft name="Execute Oven_turnOn"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</SubTask>
+                            </Task>
+                            <Task Identifier="washingmachine" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>washingmachine</Name>
+<Type></Type>
+<TemporalOperator name="Choice"/>
+<Parent name="Level 3"/>
+<SiblingLeft name="oven"/>
+<SiblingRight name="lightbulb"/>
+<SubTask>
+    <Task Identifier="Check washingmachine" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Check washingmachine</Name>
+        <Type></Type>
+        <Precondition operator="and">
+            <ConditionGroup operator="eq">
+                <ConditionLiteral value="type"/>
+                <ConditionLiteral value="washingmachine"/>
+            </ConditionGroup>
+        </Precondition>
+        <TemporalOperator name="SequentialEnablingInfo"/>
+        <Parent name="washingmachine"/>
+        <SiblingRight name="Enabled washingmachine"/>
+    </Task>
+    <Task Identifier="Enabled washingmachine" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Enabled washingmachine</Name>
+        <Type></Type>
+        <Parent name="washingmachine"/>
+        <SiblingLeft name="Check washingmachine"/>
+        <SubTask>
+            <Task Identifier="WashingMachine_turnOn" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>WashingMachine_turnOn</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled washingmachine"/>
+                <SiblingRight name="WashingMachine_getCycle"/>
+                <SubTask>
+                    <Task Identifier="Enter WashingMachine_turnOn on" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter WashingMachine_turnOn on</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="WashingMachine_turnOn"/>
+                        <SiblingRight name="Invoke WashingMachine_turnOn"/>
+                    </Task>
+                    <Task Identifier="Invoke WashingMachine_turnOn" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke WashingMachine_turnOn</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="WashingMachine_turnOn"/>
+                        <SiblingLeft name="Enter WashingMachine_turnOn on"/>
+                        <SiblingRight name="Execute WashingMachine_turnOn"/>
+                    </Task>
+                    <Task Identifier="Execute WashingMachine_turnOn" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute WashingMachine_turnOn</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="WashingMachine_turnOn"/>
+                        <SiblingLeft name="Invoke WashingMachine_turnOn"/>
+                        <SiblingRight name="Output  WashingMachine_turnOn parameters"/>
+                    </Task>
+                    <Task Identifier="Output  WashingMachine_turnOn parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  WashingMachine_turnOn parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="WashingMachine_turnOn"/>
+                        <SiblingLeft name="Execute WashingMachine_turnOn"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="WashingMachine_getCycle" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>WashingMachine_getCycle</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled washingmachine"/>
+                <SiblingLeft name="WashingMachine_turnOn"/>
+                <SiblingRight name="WashingMachine_isOn"/>
+                <SubTask>
+                    <Task Identifier="Invoke WashingMachine_getCycle" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke WashingMachine_getCycle</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="WashingMachine_getCycle"/>
+                        <SiblingRight name="Execute WashingMachine_getCycle"/>
+                    </Task>
+                    <Task Identifier="Execute WashingMachine_getCycle" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute WashingMachine_getCycle</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="WashingMachine_getCycle"/>
+                        <SiblingLeft name="Invoke WashingMachine_getCycle"/>
+                        <SiblingRight name="Output  WashingMachine_getCycle parameters"/>
+                    </Task>
+                    <Task Identifier="Output  WashingMachine_getCycle parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  WashingMachine_getCycle parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="WashingMachine_getCycle"/>
+                        <SiblingLeft name="Execute WashingMachine_getCycle"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="WashingMachine_isOn" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>WashingMachine_isOn</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled washingmachine"/>
+                <SiblingLeft name="WashingMachine_getCycle"/>
+                <SiblingRight name="WashingMachine_setCycle"/>
+                <SubTask>
+                    <Task Identifier="Invoke WashingMachine_isOn" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke WashingMachine_isOn</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="WashingMachine_isOn"/>
+                        <SiblingRight name="Execute WashingMachine_isOn"/>
+                    </Task>
+                    <Task Identifier="Execute WashingMachine_isOn" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute WashingMachine_isOn</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="WashingMachine_isOn"/>
+                        <SiblingLeft name="Invoke WashingMachine_isOn"/>
+                        <SiblingRight name="Output  WashingMachine_isOn parameters"/>
+                    </Task>
+                    <Task Identifier="Output  WashingMachine_isOn parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  WashingMachine_isOn parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="WashingMachine_isOn"/>
+                        <SiblingLeft name="Execute WashingMachine_isOn"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="WashingMachine_setCycle" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>WashingMachine_setCycle</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled washingmachine"/>
+                <SiblingLeft name="WashingMachine_isOn"/>
+                <SubTask>
+                    <Task Identifier="Enter WashingMachine_setCycle cycle" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter WashingMachine_setCycle cycle</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="WashingMachine_setCycle"/>
+                        <SiblingRight name="Invoke WashingMachine_setCycle"/>
+                    </Task>
+                    <Task Identifier="Invoke WashingMachine_setCycle" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke WashingMachine_setCycle</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="WashingMachine_setCycle"/>
+                        <SiblingLeft name="Enter WashingMachine_setCycle cycle"/>
+                        <SiblingRight name="Execute WashingMachine_setCycle"/>
+                    </Task>
+                    <Task Identifier="Execute WashingMachine_setCycle" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute WashingMachine_setCycle</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="WashingMachine_setCycle"/>
+                        <SiblingLeft name="Invoke WashingMachine_setCycle"/>
+                        <SiblingRight name="Output  WashingMachine_setCycle parameters"/>
+                    </Task>
+                    <Task Identifier="Output  WashingMachine_setCycle parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  WashingMachine_setCycle parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="WashingMachine_setCycle"/>
+                        <SiblingLeft name="Execute WashingMachine_setCycle"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</SubTask>
+                            </Task>
+                            <Task Identifier="lightbulb" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>lightbulb</Name>
+<Type></Type>
+<TemporalOperator name="Choice"/>
+<Parent name="Level 3"/>
+<SiblingLeft name="washingmachine"/>
+<SiblingRight name="sensor"/>
+<SubTask>
+    <Task Identifier="Check lightbulb" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Check lightbulb</Name>
+        <Type></Type>
+        <Precondition operator="and">
+            <ConditionGroup operator="eq">
+                <ConditionLiteral value="type"/>
+                <ConditionLiteral value="lightbulb"/>
+            </ConditionGroup>
+        </Precondition>
+        <TemporalOperator name="SequentialEnablingInfo"/>
+        <Parent name="lightbulb"/>
+        <SiblingRight name="Enabled lightbulb"/>
+    </Task>
+    <Task Identifier="Enabled lightbulb" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Enabled lightbulb</Name>
+        <Type></Type>
+        <Parent name="lightbulb"/>
+        <SiblingLeft name="Check lightbulb"/>
+        <SubTask>
+            <Task Identifier="Lightbulb_turnOn" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Lightbulb_turnOn</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled lightbulb"/>
+                <SiblingRight name="Lightbulb_isOn"/>
+                <SubTask>
+                    <Task Identifier="Enter Lightbulb_turnOn on" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter Lightbulb_turnOn on</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Lightbulb_turnOn"/>
+                        <SiblingRight name="Invoke Lightbulb_turnOn"/>
+                    </Task>
+                    <Task Identifier="Invoke Lightbulb_turnOn" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Lightbulb_turnOn</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Lightbulb_turnOn"/>
+                        <SiblingLeft name="Enter Lightbulb_turnOn on"/>
+                        <SiblingRight name="Execute Lightbulb_turnOn"/>
+                    </Task>
+                    <Task Identifier="Execute Lightbulb_turnOn" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Lightbulb_turnOn</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Lightbulb_turnOn"/>
+                        <SiblingLeft name="Invoke Lightbulb_turnOn"/>
+                        <SiblingRight name="Output  Lightbulb_turnOn parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Lightbulb_turnOn parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Lightbulb_turnOn parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Lightbulb_turnOn"/>
+                        <SiblingLeft name="Execute Lightbulb_turnOn"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Lightbulb_isOn" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Lightbulb_isOn</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled lightbulb"/>
+                <SiblingLeft name="Lightbulb_turnOn"/>
+                <SubTask>
+                    <Task Identifier="Invoke Lightbulb_isOn" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Lightbulb_isOn</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Lightbulb_isOn"/>
+                        <SiblingRight name="Execute Lightbulb_isOn"/>
+                    </Task>
+                    <Task Identifier="Execute Lightbulb_isOn" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Lightbulb_isOn</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Lightbulb_isOn"/>
+                        <SiblingLeft name="Invoke Lightbulb_isOn"/>
+                        <SiblingRight name="Output  Lightbulb_isOn parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Lightbulb_isOn parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Lightbulb_isOn parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Lightbulb_isOn"/>
+                        <SiblingLeft name="Execute Lightbulb_isOn"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</SubTask>
+                            </Task>
+                            <Task Identifier="sensor" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>sensor</Name>
+<Type></Type>
+<TemporalOperator name="Choice"/>
+<Parent name="Level 3"/>
+<SiblingLeft name="lightbulb"/>
+<SiblingRight name="alarm"/>
+<SubTask>
+    <Task Identifier="Check sensor" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Check sensor</Name>
+        <Type></Type>
+        <Precondition operator="and">
+            <ConditionGroup operator="eq">
+                <ConditionLiteral value="type"/>
+                <ConditionLiteral value="sensor"/>
+            </ConditionGroup>
+        </Precondition>
+        <TemporalOperator name="SequentialEnablingInfo"/>
+        <Parent name="sensor"/>
+        <SiblingRight name="Sensor_getStatus"/>
+    </Task>
+    <Task Identifier="Sensor_getStatus" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Sensor_getStatus</Name>
+        <Type></Type>
+        <TemporalOperator name="Choice"/>
+        <Parent name="sensor"/>
+        <SiblingLeft name="Check sensor"/>
+        <SubTask>
+            <Task Identifier="Invoke Sensor_getStatus" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Invoke Sensor_getStatus</Name>
+                <Type>Control</Type>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="Sensor_getStatus"/>
+                <SiblingRight name="Execute Sensor_getStatus"/>
+            </Task>
+            <Task Identifier="Execute Sensor_getStatus" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Execute Sensor_getStatus</Name>
+                <Type></Type>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="Sensor_getStatus"/>
+                <SiblingLeft name="Invoke Sensor_getStatus"/>
+                <SiblingRight name="Output  Sensor_getStatus parameters"/>
+            </Task>
+            <Task Identifier="Output  Sensor_getStatus parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Output  Sensor_getStatus parameters</Name>
+                <Type>Visualise</Type>
+                <TemporalOperator name="OrderIndependence"/>
+                <Parent name="Sensor_getStatus"/>
+                <SiblingLeft name="Execute Sensor_getStatus"/>
+            </Task>
+        </SubTask>
+    </Task>
+    <Task Identifier="Enabled sensor" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Enabled sensor</Name>
+        <Type></Type>
+        <Parent name="sensor"/>
+        <SiblingLeft name="Check sensor"/>
+        <SubTask>
+            <Task Identifier="Sensor_getStatus" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Sensor_getStatus</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="sensor"/>
+                <SiblingLeft name="Check sensor"/>
+                <SubTask>
+                    <Task Identifier="Invoke Sensor_getStatus" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Sensor_getStatus</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Sensor_getStatus"/>
+                        <SiblingRight name="Execute Sensor_getStatus"/>
+                    </Task>
+                    <Task Identifier="Execute Sensor_getStatus" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Sensor_getStatus</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Sensor_getStatus"/>
+                        <SiblingLeft name="Invoke Sensor_getStatus"/>
+                        <SiblingRight name="Output  Sensor_getStatus parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Sensor_getStatus parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Sensor_getStatus parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Sensor_getStatus"/>
+                        <SiblingLeft name="Execute Sensor_getStatus"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</SubTask>
+                            </Task>
+                            <Task Identifier="alarm" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+<Name>alarm</Name>
+<Type></Type>
+<TemporalOperator name="Choice"/>
+<Parent name="Level 3"/>
+<SiblingLeft name="sensor"/>
+<SubTask>
+    <Task Identifier="Check alarm" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Check alarm</Name>
+        <Type></Type>
+        <Precondition operator="and">
+            <ConditionGroup operator="eq">
+                <ConditionLiteral value="type"/>
+                <ConditionLiteral value="alarm"/>
+            </ConditionGroup>
+        </Precondition>
+        <TemporalOperator name="SequentialEnablingInfo"/>
+        <Parent name="alarm"/>
+        <SiblingRight name="Enabled alarm"/>
+    </Task>
+    <Task Identifier="Enabled alarm" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>Enabled alarm</Name>
+        <Type></Type>
+        <Parent name="alarm"/>
+        <SiblingLeft name="Check alarm"/>
+        <SubTask>
+            <Task Identifier="Alarm_getState" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Alarm_getState</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled alarm"/>
+                <SiblingRight name="Alarm_setState"/>
+                <SubTask>
+                    <Task Identifier="Invoke Alarm_getState" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Alarm_getState</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Alarm_getState"/>
+                        <SiblingRight name="Execute Alarm_getState"/>
+                    </Task>
+                    <Task Identifier="Execute Alarm_getState" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Alarm_getState</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Alarm_getState"/>
+                        <SiblingLeft name="Invoke Alarm_getState"/>
+                        <SiblingRight name="Output  Alarm_getState parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Alarm_getState parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Alarm_getState parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Alarm_getState"/>
+                        <SiblingLeft name="Execute Alarm_getState"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Alarm_setState" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                <Name>Alarm_setState</Name>
+                <Type></Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Enabled alarm"/>
+                <SiblingLeft name="Alarm_getState"/>
+                <SubTask>
+                    <Task Identifier="Enter Alarm_setState state" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Enter Alarm_setState state</Name>
+                        <Type>Edit</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Alarm_setState"/>
+                        <SiblingRight name="Invoke Alarm_setState"/>
+                    </Task>
+                    <Task Identifier="Invoke Alarm_setState" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Invoke Alarm_setState</Name>
+                        <Type>Control</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Alarm_setState"/>
+                        <SiblingLeft name="Enter Alarm_setState state"/>
+                        <SiblingRight name="Execute Alarm_setState"/>
+                    </Task>
+                    <Task Identifier="Execute Alarm_setState" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Execute Alarm_setState</Name>
+                        <Type></Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Alarm_setState"/>
+                        <SiblingLeft name="Invoke Alarm_setState"/>
+                        <SiblingRight name="Output  Alarm_setState parameters"/>
+                    </Task>
+                    <Task Identifier="Output  Alarm_setState parameters" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                        <Name>Output  Alarm_setState parameters</Name>
+                        <Type>Visualise</Type>
+                        <TemporalOperator name="OrderIndependence"/>
+                        <Parent name="Alarm_setState"/>
+                        <SiblingLeft name="Execute Alarm_setState"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</SubTask>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

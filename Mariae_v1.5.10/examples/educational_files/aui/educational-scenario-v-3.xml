@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://giove.isti.cnr.it" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns3="uri:xs" xmlns:ns4="http://schemas.xmlsoap.org/wsdl/" type="aui" schema-version="1.5.4">
+    <external_functions>
+        <function reference="http://sample.bpel.org/bpel/sample/Portal/PortalPortType/login" namespace="http://141.76.40.224:8080/ode/processes/Portal?wsdl" name="Portal_PortalPortType_login" type="web_service">
+            <output type="ns1_loginResponse" name="parameters"/>
+            <input name="parameters" type="ns1_login"/>
+        </function>
+    </external_functions>
+    <data>
+        <xs:schema finalDefault="" blockDefault="" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+            <xs:complexType name="ns1_Portal_PortalPortType_login" mixed="false">
+                <xs:sequence minOccurs="1" maxOccurs="1">
+                    <xs:element name="input">
+                        <xs:complexType mixed="false">
+                            <xs:sequence>
+<xs:element name="parameters" type="ns1_login"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="output">
+                        <xs:complexType mixed="false">
+                            <xs:sequence>
+<xs:element name="parameters" type="ns1_loginResponse"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ns1_login">
+                <xs:complexType mixed="false">
+                    <xs:sequence>
+                        <xs:element name="login" type="xs:string"/>
+                        <xs:element name="password" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ns1_loginResponse">
+                <xs:complexType mixed="false">
+                    <xs:sequence>
+                        <xs:element name="loggedIn" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </data>
+    <presentation name="Enter_Login_presentation">
+        <connections>
+            <conditional_conn interactor_id="P1_Trigger_Login">
+                <target presentation_to_load="Deny_Login_presentation">
+                    <condition data_reference="data:[ns1_Portal_PortalPortType_login/output/parameters/loggedIn==false]"/>
+                </target>
+                <target presentation_to_load="Get_student_data_presentation">
+                    <condition data_reference="data:[ns1_Portal_PortalPortType_login/output/parameters/loggedIn==true]"/>
+                </target>
+            </conditional_conn>
+        </connections>
+        <grouping hierarchy="false" ordering="false" continuous_update="false" id="P1_Access_Educational_Application" hidden="false">
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="P1_Enter_Login_data_input" hidden="false">
+                <text_edit id="P1_Enter_Login" data_reference="data:ns1_Portal_PortalPortType_login/input/parameters/login" enabled="false" focus="false" hidden="false" continuous_update="false"/>
+                <text_edit id="P1_Enter_Password" data_reference="data:ns1_Portal_PortalPortType_login/input/parameters/password" enabled="false" focus="false" hidden="true" continuous_update="false"/>
+            </grouping>
+            <activator id="P1_Trigger_Login" enabled="true" focus="false" hidden="false" continuous_update="false">
+                <events>
+                    <activation>
+                        <handler>
+                            <script>
+<validation level="error" interactor_id="P1_Enter_Login" property_name="value">
+    <regexp expression="[0-9]+"/>
+</validation>
+<validation level="error" interactor_id="P1_Enter_Login" property_name="value">
+    <not_empty/>
+</validation>
+<validation level="error" interactor_id="P1_Enter_Password" property_name="value">
+    <not_empty/>
+</validation>
+<change_property data_value="ui:P1_Enter_Login/value" data_reference="ns1_Portal_PortalPortType_login/input/parameters/login"/>
+<change_property data_value="ui:P1_Enter_Password/value" data_reference="ns1_Portal_PortalPortType_login/input/parameters/password"/>
+<invoke_function name="Portal_PortalPortType_login" namespace="http://sample.bpel.org/bpel/sample">
+    <parameter name="parameters" data_ref="ns1_Portal_PortalPortType_login/input/parameters"/>
+    <result name="parameters" data_ref="ns1_Portal_PortalPortType_login/output/parameters"/>
+</invoke_function>
+                            </script>
+                        </handler>
+                    </activation>
+                </events>
+            </activator>
+        </grouping>
+    </presentation>
+    <presentation name="Deny_Login_presentation">
+        <grouping hierarchy="false" ordering="false" continuous_update="false" id="P3_Access_Application_output" hidden="false">
+            <description id="P3_Deny_Login" data_reference="data:ns1_Portal_PortalPortType_login/output/parameters/loggedIn" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+        </grouping>
+    </presentation>
+    <presentation name="Get_student_data_presentation">
+        <connections>
+            <elementary_conn interactor_id="P4_Go_to_Show_last_login_presentation" presentation_name="Show_last_login_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping hierarchy="false" ordering="false" continuous_update="false" id="P4_Access_Educational_Application" hidden="false">
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="P4_Show_initial_overview_output" hidden="false">
+                <description id="P4_Get_student_data" data_reference="data:ns1_Portal_PortalPortType_login/output/parameters/loggedIn" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+            </grouping>
+            <navigator id="P4_Go_to_Show_last_login_presentation" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+        </grouping>
+    </presentation>
+    <presentation name="Show_last_login_presentation">
+        <connections>
+            <elementary_conn interactor_id="P5_Go_to_Select_overview_presentation" presentation_name="Select_overview_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping hierarchy="false" ordering="false" continuous_update="false" id="P5_Access_Educational_Application" hidden="false">
+            <description id="P5_Show_last_login" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+            <description id="P5_show_student_timetable" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+            <navigator id="P5_Go_to_Select_overview_presentation" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+        </grouping>
+    </presentation>
+    <presentation name="Show_courses_to_unsubscribe_presentation">
+        <connections>
+            <elementary_conn interactor_id="P11_Go_to_Select_course_info_presentation" presentation_name="Select_course_info_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping hierarchy="false" ordering="false" continuous_update="false" id="P11_Access_Educational_Application" hidden="false">
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="P11_Select_course_to_unsubscribe" hidden="false">
+                <description id="P11_Show_courses_to_unsubscribe" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                <navigator id="P11_Go_to_Select_course_info_presentation" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+            </grouping>
+            <activator id="P11_Logout" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+        </grouping>
+    </presentation>
+    <presentation name="Select_course_info_presentation">
+        <connections>
+            <elementary_conn interactor_id="P12_Go_to_Select_overview_presentation" presentation_name="Select_overview_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping hierarchy="false" ordering="false" continuous_update="false" id="P12_Access_Educational_Application" hidden="false">
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="P12_Access_Course_to_Unsubscribe" hidden="false">
+                <grouping hierarchy="false" ordering="false" continuous_update="false" id="P12_Select_Courses_to_unsubscribe" hidden="false">
+                    <single_choice cardinality="4" id="P12_Select_course_info" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                    <navigator id="P12_Go_to_Select_overview_presentation" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                </grouping>
+                <single_choice cardinality="4" id="P12_UnSubscribe_selected_course" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+            </grouping>
+            <activator id="P12_Logout" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+        </grouping>
+    </presentation>
+    <presentation name="Select_overview_presentation">
+        <connections>
+            <elementary_conn interactor_id="P13_Select_unsubscribe" presentation_name="Show_courses_to_unsubscribe_presentation" external="false" anchor="false"/>
+        </connections>
+        <grouping hierarchy="false" ordering="false" continuous_update="false" id="P13_Access_Educational_Application" hidden="false">
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="P13_Overview" hidden="false">
+                <activator id="P13_Select_overview" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                <description id="P13_Show_overview" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+            </grouping>
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="P13_Subscribe_course" hidden="false">
+                <activator id="P13_Select_subscribe" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                <grouping hierarchy="false" ordering="false" continuous_update="false" id="P13_Access_course" hidden="false">
+                    <grouping hierarchy="false" ordering="false" continuous_update="false" id="P13_Select_courses_to_subscribe" hidden="false">
+                        <single_choice cardinality="4" id="P13_Select_course_to_subscribe_info" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                        <description id="P13_Show_course_to_subscribe_info" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                        <activator id="P13_Close_course_info" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                    </grouping>
+                    <single_choice cardinality="4" id="P13_Subscribe_selected_course" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                </grouping>
+            </grouping>
+            <grouping hierarchy="false" ordering="false" continuous_update="false" id="P13_UnSubscribe_course" hidden="false">
+                <activator id="P13_Select_unsubscribe" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                <grouping hierarchy="false" ordering="false" continuous_update="false" id="P13_Select_Courses_to_unsubscribe" hidden="false">
+                    <description id="P13_Show_course_info" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                    <activator id="P13_Close" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+                </grouping>
+            </grouping>
+            <activator id="P13_Logout" enabled="true" focus="false" hidden="false" continuous_update="false"/>
+        </grouping>
+    </presentation>
+</interface>

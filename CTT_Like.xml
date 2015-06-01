@@ -1,0 +1,34 @@
+<?xmp version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="Like a user">
+    <Task Identifier="Like a user" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="Search user" Category="interaction" Iterative="false" Optional="true" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <Type>None</Type>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Like a user"/>
+                <SiblingRight name="Navigate to user profile"/>
+            </Task>
+            <Task Identifier="Navigate to user profile" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnabling"/>
+                <Parent name="Like a user"/>
+                <SiblingLeft name="Search user"/>
+                <SiblingRight name="Like user"/>
+            </Task>
+            <Task Identifier="Like user" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="Like a user"/>
+                <SiblingLeft name="Navigate to user profile"/>
+                <SiblingRight name="Register like"/>
+            </Task>
+            <Task Identifier="Register like" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <Parent name="Like a user"/>
+                <SiblingLeft name="Like user"/>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

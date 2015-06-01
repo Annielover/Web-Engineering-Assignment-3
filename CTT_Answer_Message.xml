@@ -1,0 +1,46 @@
+<?xmp version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="Answer to message on user wall">
+    <Task Identifier="Answer to message on user wall" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="Navigate to the wall" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnabling"/>
+                <Parent name="Answer to message on user wall"/>
+                <SiblingRight name="Select the message"/>
+            </Task>
+            <Task Identifier="Select the message" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnabling"/>
+                <Parent name="Answer to message on user wall"/>
+                <SiblingLeft name="Navigate to the wall"/>
+                <SiblingRight name="Put the answer on the wall"/>
+            </Task>
+            <Task Identifier="Put the answer on the wall" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <Parent name="Answer to message on user wall"/>
+                <SiblingLeft name="Select the message"/>
+                <SubTask>
+                    <Task Identifier="Enter the answer text" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Put the answer on the wall"/>
+                        <SiblingRight name="Save changes"/>
+                    </Task>
+                    <Task Identifier="Save changes" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Put the answer on the wall"/>
+                        <SiblingLeft name="Enter the answer text"/>
+                        <SiblingRight name="Make the message visible"/>
+                    </Task>
+                    <Task Identifier="Make the message visible" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Parent name="Put the answer on the wall"/>
+                        <SiblingLeft name="Save changes"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>
