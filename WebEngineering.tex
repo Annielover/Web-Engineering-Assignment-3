@@ -1020,7 +1020,7 @@ $\;$ \\
 \clearpage
 
 \subsection{Change, add and delete profile information}
-
+\label{sec:changeadddelete}
 The first step in changing / editing the personal profile of any registered user is accessing the profile. Then the user is able to change the nickname, age, location, gender and picture. All the information is passed to the system. \\
 Deleting profile information - i.e., leaving blank some input form fields uses the same navigational model and is therefore not drawn again. \\
 Adding profile information - i.e., filling in input form fields uses also the same navigational model and is again thus not drawn again.
@@ -1060,7 +1060,7 @@ $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{nav_PutMessageOnUserWall.pdf}
- \captionof{figure}[Put message on user wall]{Put message on user wall.}
+ \captionof{figure}[Put message on user wall WSDM model]{Put message on user wall navigational model.}
 \end{minipage}
 
 \subsection{Answer to a message on personal wall}
@@ -1071,7 +1071,7 @@ $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{nav_AnswerMessagePersonalWall.pdf}
- \captionof{figure}[Answer message on user wall]{Answer message on personal wall.}
+ \captionof{figure}[Answer message on user wall WSDM model]{Answer message on personal wall navigational model.}
 \end{minipage}
 
 \subsection{Delete message on personal wall}
@@ -1081,137 +1081,149 @@ $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{nav_DeleteMessageOnWall.pdf}
- \captionof{figure}[Delete message on user wall]{Delete message on personal wall.}
+ \captionof{figure}[Delete message on user wall WSDM model]{Delete message on personal wall navigational model.}
 \end{minipage}
-$\;$ \\ 
 
 \subsection{Send private message}
+
+Any registered user can send a private message to the ``singles'' audience class. Thus administrators $\rightarrow$ singles and singles $\rightarrow$ singles. The navigation flow is depicted in the figure below. To send such a private message, the user needs to navigate to the profile of the user he whiches to send a message to (or searches for its name) and type the message text. In case of not confirming the sending, he is redirected back to the message text. In case of confirming the sending, the message is send. \\
+Only the username is required when searching for a user, hence the rest of the paramteters are not shown.
 
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
-   \includegraphics[scale=1]{nav_SendPrivateMessage.pdf}
- \captionof{figure}[Send private message]{Send private message.}
+   \includegraphics[scale=0.9]{nav_SendPrivateMessage.pdf}
+ \captionof{figure}[Send private message WSDM model]{Send private message navigational model.}
 \end{minipage}
-$\;$ \\ 
 
-\subsection{Like user}
+\subsection{Liking a user}
+
+A ``single'' is able to like another ``single''. To do so, the user navigates to the profile of the user he whishes to like (or searches for its name) and likes a user. Next, the like is registered.
 
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{nav_LikeUser.pdf}
- \captionof{figure}[Like a user]{Like a user.}
+ \captionof{figure}[Like a user WSDM model]{Like a user navigational model.}
 \end{minipage}
-$\;$ \\ 
 
 \subsection{Manage liked list}
 
+A ``single'' can also manage its like list. That is, to remove a user from its like list. To do so, the ``single'' navigates to its like list and selects the user he wants to remove (the profileID of that particular user is passed along). The system asks for confirmation and in case of denying the confirmation, he is redirected back to his like list. In case of successful confirmation, the user is actually removed from the list.
+
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
-   \includegraphics[scale=1]{nav_ManageLikedList.pdf}
- \captionof{figure}[Manage liked list]{Manage liked list.}
+   \includegraphics[scale=0.9]{nav_ManageLikedList.pdf}
+ \captionof{figure}[Manage liked list WSDM model]{Manage liked list navigational model.}
 \end{minipage}
-$\;$ \\ 
 
 \subsection{Notify user in case of profile updates}
 
+In case of any profile updates, a sound or a notification is played or shown, respectively to the users on which the particular user is listed on their liked list.
+
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
-   \includegraphics[scale=1]{nav_NotifyProfileUpdate.pdf}
- \captionof{figure}[Notify user of profile updates]{Notify user of profile updates.}
+   \includegraphics[scale=0.95]{nav_NotifyProfileUpdate.pdf}
+ \captionof{figure}[Notify user of profile updates WSDM model]{Notify user of profile updates navigational model.}
 \end{minipage}
-$\;$ \\ 
 
 \subsection{Send attention to a user}
 
-$\;$ \\
-\noindent\begin{minipage}{\textwidth}
-    \centering
-   \includegraphics[scale=1]{nav_SendAttention.pdf}
- \captionof{figure}[Send attention]{Sent an attention to the user.}
-\end{minipage}
-$\;$ \\ 
-
-\subsection{Send private message to a user}
+A ``single'' can send an attention to another ``single''. Therefore, he first has to navigate to the profile page of the ``single'' he wants to send the attention to (or he can also search for its profile). Then, the desired attention is chosen, confirmation is asked an when confirmed, the attention is actually send. \\
+The navigational flow is depicted in the figure below.
 
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
-   \includegraphics[scale=1]{nav_SendPrivateMessage.pdf}
- \captionof{figure}[Send private message]{Send a private message.}
+   \includegraphics[scale=1.05]{nav_SendAttention.pdf}
+ \captionof{figure}[Send attention WSDM model]{Sent an attention to the user navigational model.}
 \end{minipage}
-$\;$ \\ 
 
 \subsection{Block or report a user}
 
+A ``single'' can report or block a user. Again, he has to navigate to the profile of the user he wants to block, or he can instead search for his profile. There, the choice can be made to block or to report the user in question. In both cases, a message is displayed after blocking or deletion. \\
+The navigational flow is depicted in the figure below.
+
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
-   \includegraphics[scale=1]{nav_BlockReport.pdf}
- \captionof{figure}[Block or report user]{Block or report a user.}
+   \includegraphics[scale=1.05]{nav_BlockReport.pdf}
+ \captionof{figure}[Block or report user WSDM model]{Block or report a user navigational model.}
 \end{minipage}
-$\;$ \\ 
 
 \subsection{Log out}
 
+Any registerd user is also able to logout from the system. When doing so, a message is shown and he is redirected to the home page.
+
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
-   \includegraphics[scale=1]{nav_LogOff.pdf}
- \captionof{figure}[Log out]{Log out of the system.}
+   \includegraphics[scale=1.4]{nav_LogOff.pdf}
+ \captionof{figure}[Log out WSDM model]{Log out of the system navigational model.}
 \end{minipage}
-$\;$ \\ 
+
+\clearpage
 
 \subsection{Terminate account}
 
+Any registered user can also terminate his account. After terminating his account, he is redirected to the home page. The navigational model is depicted in the figure below.
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{nav_TerminateAccount.pdf}
- \captionof{figure}[Terminate account]{Terminate account.}
+ \captionof{figure}[Terminate account WSDM model]{Terminate account navigational model.}
 \end{minipage}
-$\;$ \\ 
+
 
 \subsection{Display personal information}
+
+The ``display personal information'' WSDM model / navigational flow is the navigational flow to display the personal profile. A registered user accesses his user profile (the profileID of the user is passed) and can view various fields: nickname, age, gender, location and current picture. \\ \\
+To change, add or delete any of these fields, we invite the reader to take a look at the WSDM model displayed in section \ref{sec:changeadddelete}.
 
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{Nav_DisplayPersonalInformation.pdf}
- \captionof{figure}[Display personal information]{Display personal information.}
+ \captionof{figure}[Display personal information WSDM model]{Display personal information.}
 \end{minipage}
-$\;$ \\ 
+
+\clearpage
 
 \subsection{Display foreign information}
+
+An administrator is able to access any information of profiles of any other registered users. The navigational model for this action is depicted in the figure below. It is actually almost the same as the `display personal information' navigational flow, but since it is a seperate requirement, a WSDM diagram had to be made.
 
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{Nav_DisplayForeignInformation.pdf}
- \captionof{figure}[Display foreign information]{Display foreign information.}
+ \captionof{figure}[Display foreign information WSDM model]{Display foreign information.}
 \end{minipage}
-$\;$ \\ 
+
 
 \subsection{Browse user profile}
+
+An administrator can browse all user profiles.
 
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{nav_BrowsUserProfile2.pdf}
- \captionof{figure}[Browse user profile]{Browse user profile.}
+ \captionof{figure}[Browse user profile WSDM model]{Browse user profile.}
 \end{minipage}
-$\;$ \\ 
+
 
 \subsection{Send message to any user}
+
+An administrator can send a message to any user
 
 $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{nav_SendMessageAnyUser.pdf}
- \captionof{figure}[Send message to any user]{Send message to any user.}
+ \captionof{figure}[Send message to any user WSDM model]{Send message to any user.}
 \end{minipage}
 $\;$ \\ 
 
@@ -1221,7 +1233,7 @@ $\;$ \\
 \noindent\begin{minipage}{\textwidth}
     \centering
    \includegraphics[scale=1]{nav_BlockDisableDelete.pdf}
- \captionof{figure}[Block, disable and delete user account]{Block, disable and delete user account.}
+ \captionof{figure}[Block, disable and delete user account WSDM model]{Block, disable and delete user account.}
 \end{minipage}
 
 \section{Functional Modeling}
